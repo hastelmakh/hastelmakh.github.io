@@ -1,0 +1,17 @@
+#section-hero {
+    background: url("../images/bg-grid.svg") repeat;
+
+    > .content {
+        margin-top: 168px;
+        margin-bottom: 64px;
+        display: flex;
+        justify-content: space-between;
+
+        > .picture {
+            margin-top: -24px;
+            height: 300px;
+            width: 300px;
+            background: #ccc;
+        }
+    }
+}
