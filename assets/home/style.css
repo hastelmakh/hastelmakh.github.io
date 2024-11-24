@@ -1,5 +1,5 @@
 #section-hero {
-    background: url("../images/bg-grid.svg") repeat;
+    background: url('../images/bg-grid.svg') repeat;
 
     > .content {
         margin-top: 168px;

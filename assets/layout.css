@@ -5,11 +5,9 @@ body {
         width: 100%;
 
         > .content {
-            --content-width: 1200px;
-            --content-margin: 16px;
-            width: var(--content-width);
+            width: 1200px;
             max-width: 100%;
-            margin: 0 var(--content-margin);
+            margin: 0 16px;
             overflow: visible;
         }
     }
