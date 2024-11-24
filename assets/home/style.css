@@ -5,6 +5,7 @@
 
 #section-hero {
     background: url('../images/bg-grid.svg') repeat;
+    position: relative;
 
     > .content {
         margin-top: 168px;
@@ -124,17 +125,28 @@
                     }
                 }
             }
+        }
+    }
 
-            & .background.shapes {
-                background-image: url('images/hero/bg-shapes.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
-                height: clamp(5.1rem, 30vw, 10.2rem);
-                width: clamp(12rem, 70vw, 24rem);
-                position: absolute;
-                bottom: -10%;
-                right: 25%;
-            }
+    & .background {
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+
+        &.star {
+            background-image: url('images/hero/bg-star.svg');
+            height: 1.25rem;
+            width: 1.25rem;
+            top: 2rem;
+            left: max((100vw - var(--layout-width)) / 2, 0px);
+        }
+
+        &.shapes {
+            background-image: url('images/hero/bg-shapes.svg');
+            height: clamp(5.1rem, 30vw, 10.2rem);
+            width: clamp(12rem, 70vw, 24rem);
+            bottom: -10%;
+            right: 25%;
         }
     }
 }
