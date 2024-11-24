@@ -138,7 +138,15 @@
             height: 1.25rem;
             width: 1.25rem;
             top: 2rem;
-            left: max((100vw - var(--layout-width)) / 2, 0px);
+            left: max((100vw - var(--layout-width)) / 2, 4px);
+        }
+
+        &.flower {
+            background-image: url('images/hero/bg-flower.svg');
+            height: 3.125rem;
+            width: 3.125rem;
+            top: 4rem;
+            right: max(((100vw - var(--layout-width)) / 2) + 24px, 24px);
         }
 
         &.shapes {
