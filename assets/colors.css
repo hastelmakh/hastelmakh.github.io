@@ -1,3 +1,9 @@
 body {
     --color-black: #1A1A1A;
+    --color-white: #FFFFFF;
+
+    --color-light-gray: #F5F5F5;
+    --color-light-green: #7DD3B2;
+
+    --color-dark-gray: #6D6D6D;
 }
