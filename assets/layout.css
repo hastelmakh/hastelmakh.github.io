@@ -1,13 +1,16 @@
 body {
+    --layout-width: 1200px;
+    --layout-margin: 16px;
+
     > main > section {
         display: flex;
         justify-content: center;
         width: 100%;
 
         > .content {
-            width: 1200px;
+            width: var(--layout-width);
             max-width: 100%;
-            margin: 0 16px;
+            margin: 0 var(--layout-margin);
             overflow: visible;
         }
     }
