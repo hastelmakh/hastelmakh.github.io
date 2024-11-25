@@ -132,7 +132,7 @@
         position: absolute;
 
         &.star {
-            background-image: url('images/hero/bg-star.svg');
+            background-image: url('images/hero/deco-star.svg');
             height: 1.25rem;
             width: 1.25rem;
             top: 2rem;
@@ -140,7 +140,7 @@
         }
 
         &.cookie {
-            background-image: url('images/hero/bg-cookie.svg');
+            background-image: url('images/hero/deco-cookie.svg');
             height: 2.0625rem;
             width: 2.0625rem;
             top: 20rem;
@@ -148,7 +148,7 @@
         }
 
         &.flower {
-            background-image: url('images/hero/bg-flower.svg');
+            background-image: url('images/hero/deco-flower.svg');
             height: 3.125rem;
             width: 3.125rem;
             top: 4rem;
@@ -156,7 +156,7 @@
         }
 
         &.sun {
-            background-image: url('images/hero/bg-sun.svg');
+            background-image: url('images/hero/deco-sun.svg');
             height: 2.5rem;
             width: 2.5rem;
             top: 28rem;
@@ -164,7 +164,7 @@
         }
 
         &.shapes {
-            background-image: url('images/hero/bg-shapes.svg');
+            background-image: url('images/hero/deco-shapes.svg');
             height: clamp(5.1rem, 30vw, 10.2rem);
             width: clamp(12rem, 70vw, 24rem);
             bottom: -10%;
@@ -172,7 +172,7 @@
         }
 
         &.eye {
-            background-image: url('images/hero/bg-eye.svg');
+            background-image: url('images/hero/deco-eye.svg');
             height: 6.625rem;
             width: 6.625rem;
             bottom: -3rem;
