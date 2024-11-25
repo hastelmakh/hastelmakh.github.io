@@ -6,6 +6,7 @@
 #section-hero {
     background: url('../images/bg-grid.svg') repeat;
     position: relative;
+    overflow: hidden;
 
     > .content {
         margin-top: 168px;
@@ -125,7 +126,7 @@
         }
     }
 
-    & .background {
+    & .decoration {
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
@@ -144,6 +145,14 @@
             width: 3.125rem;
             top: 4rem;
             right: max(((100vw - var(--layout-width)) / 2) + 24px, 24px);
+        }
+
+        &.sun {
+            background-image: url('images/hero/bg-sun.svg');
+            height: 2.5rem;
+            width: 2.5rem;
+            top: 28rem;
+            right: max(((100vw - var(--layout-width)) / 2) - 1.25rem, -1.25rem);
         }
 
         &.shapes {
