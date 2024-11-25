@@ -168,7 +168,15 @@
             height: clamp(5.1rem, 30vw, 10.2rem);
             width: clamp(12rem, 70vw, 24rem);
             bottom: -10%;
-            right: 25%;
+            right: calc(max(0%, min(25%, (100vw - 600px))));
+        }
+
+        &.eye {
+            background-image: url('images/hero/bg-eye.svg');
+            height: 6.625rem;
+            width: 6.625rem;
+            bottom: -3rem;
+            left: var(--layout-margin);
         }
     }
 }
