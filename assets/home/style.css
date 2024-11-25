@@ -6,7 +6,7 @@
 #section-hero {
     background: url('../images/bg-grid.svg') repeat;
     position: relative;
-    overflow: hidden;
+    overflow-x: clip;
 
     > .content {
         margin-top: 168px;
@@ -137,6 +137,14 @@
             width: 1.25rem;
             top: 2rem;
             left: max((100vw - var(--layout-width)) / 2, 4px);
+        }
+
+        &.cookie {
+            background-image: url('images/hero/bg-cookie.svg');
+            height: 2.0625rem;
+            width: 2.0625rem;
+            top: 20rem;
+            left: max(((100vw - var(--layout-width)) / 2) - 8rem, -8rem);
         }
 
         &.flower {
