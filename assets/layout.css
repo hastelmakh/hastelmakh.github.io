@@ -7,11 +7,10 @@ body {
         justify-content: center;
         width: 100%;
 
-        > .content {
+        > .layout-content {
             width: var(--layout-width);
             max-width: 100%;
             margin: 0 var(--layout-margin);
-            overflow: visible;
         }
     }
 }

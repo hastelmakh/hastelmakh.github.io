@@ -8,7 +8,7 @@
     position: relative;
     overflow-x: clip;
 
-    > .content {
+    > .layout-content {
         margin-top: 168px;
         display: flex;
         justify-content: space-between;
