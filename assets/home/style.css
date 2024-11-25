@@ -176,7 +176,7 @@
             height: 6.625rem;
             width: 6.625rem;
             bottom: -3rem;
-            left: var(--layout-margin);
+            left: max(calc(((100vw - var(--layout-width)) / 2)), var(--layout-margin));
         }
     }
 }
