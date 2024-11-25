@@ -80,9 +80,6 @@
             --picture-radius: 0.5rem;
 
             flex: 1 1 calc(50%);
-            &:nth-child(n + 3) { /* applies when the item wraps to a new line (number is +1 of children count) */
-                flex-basis: 100%;
-            }
 
             & .container {
                 min-height: calc(var(--picture-height) * 1.42);
