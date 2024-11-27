@@ -32,5 +32,39 @@
                 }
             }
         }
+
+        .grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+
+            @media (max-width: 1100px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                display: block;
+                color: var(--color-black);
+                text-decoration: none;
+                padding: 1.5rem;
+                border: 2px solid var(--color-black);
+                border-radius: 0.5rem;
+
+                .name {
+                    display: inline-block;
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                }
+
+                .description {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
     }
 }
