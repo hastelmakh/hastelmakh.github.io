@@ -2,13 +2,13 @@
     > .layout-content {
         padding: clamp(5rem, calc((100vw - 40rem) / 2), 7.5rem) 0;
 
-        & .headline {
+        .headline {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             column-gap: calc(var(--layout-margin) * 2);
 
-            & h2 {
+            h2 {
                 margin: 0 0 1rem 0;
                 display: flex;
                 align-items: center;
@@ -24,10 +24,10 @@
                 }
             }
 
-            & .text {
+            .text {
                 max-width: 31.25rem;
 
-                & p:first-child {
+                p:first-child {
                     margin-top: 0;
                 }
             }

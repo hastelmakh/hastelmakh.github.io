@@ -9,23 +9,23 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
-        & .info {
+        .info {
             --scale-divider: 37; /* bigger value makes text smaller on smaller viewports */
             font-size: clamp(0.5rem, calc(100vw / var(--scale-divider)), 1rem);
             max-width: 31.25rem;
             margin-bottom: 4rem;
 
-            & .hello {
+            .hello {
                 font-size: 1rem;
                 font-weight: 500;
             }
 
-            & .intro h1 {
+            .intro h1 {
                 font-size: 3em;
                 line-height: 1.55em;
                 margin: 0;
 
-                & .highlight {
+                .highlight {
                     --border-color: var(--color-light-green);
                     --background-color: var(--color-light-gray);
                     padding: 0.17em 0.34em;
@@ -33,7 +33,7 @@
                     border: 1px solid var(--border-color);
                     position: relative;
 
-                    & .corner {
+                    .corner {
                         --size: 8px;
                         width: var(--size);
                         height: var(--size);
@@ -62,7 +62,7 @@
                 }
             }
 
-            & .about {
+            .about {
                 color: var(--color-dark-gray);
                 margin-top: 1.25em;
                 font-size: 1.25rem;
@@ -70,7 +70,7 @@
             }
         }
 
-        & .pictures {
+        .pictures {
             --picture-height: min(calc(17.875rem), 53vw);
             --picture-width: calc(var(--picture-height) * 0.95);
             --picture-radius: 0.5rem;
@@ -78,11 +78,11 @@
 
             flex: 1 1 calc(50%);
 
-            & .container {
+            .container {
                 min-height: calc(var(--picture-height) * 1.42);
                 position: relative;
 
-                & .picture {
+                .picture {
                     position: absolute;
                     height: var(--picture-height);
                     width: var(--picture-width);
@@ -112,7 +112,7 @@
                         max-height: calc(var(--picture-height) * 0.7);
                     }
 
-                    & .caption {
+                    .caption {
                         font-family: 'Beth Ellen', sans-serif;
                         font-size: clamp(0.875rem, 3.5vw, 1.125rem);
                         text-align: center;
@@ -121,7 +121,7 @@
                 }
 
                 &:hover {
-                    & .picture {
+                    .picture {
                         &.middle {
                             transform: rotate(10deg);
                             right: 27%;
@@ -140,7 +140,7 @@
         }
     }
 
-    & .decoration {
+    .decoration {
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
