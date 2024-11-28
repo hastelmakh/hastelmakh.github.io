@@ -12,7 +12,7 @@
         .info {
             --scale-divider: 37; /* bigger value makes text smaller on smaller viewports */
             font-size: clamp(0.5rem, calc(100vw / var(--scale-divider)), 1rem);
-            max-width: 31.25rem;
+            max-width: calc(var(--layout-width) / 2.4);
             margin-bottom: 4rem;
 
             .hello {

@@ -1,0 +1,39 @@
+#section-about {
+    background-color: var(--color-black);
+    color: var(--color-white);
+
+    > .layout-content {
+        padding: clamp(5rem, calc((100vw - 40rem) / 2), 7.5rem) 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        h2 {
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 0.5em;
+                height: 0.5em;
+                background-color: var(--color-yellow);
+                border-radius: 50%;
+                margin-right: 0.3125em;
+            }
+        }
+
+        .text {
+            max-width: calc(var(--layout-width) / 2.4);
+
+            p:first-child {
+                margin-top: 0;
+            }
+
+            a {
+                color: var(--color-blue);
+            }
+        }
+    }
+}
