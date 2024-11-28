@@ -54,6 +54,7 @@
                 padding: 1.5rem;
                 border: 2px solid var(--color-black);
                 border-radius: 0.5rem;
+                height: 500px;
 
                 .name {
                     display: inline-block;
