@@ -91,7 +91,12 @@
                     border-radius: var(--picture-radius);
                     box-shadow: 0 1px 3px 2px rgba(0,0,0,0.08), 0 4px 4px 0 rgba(0,0,0,0.04);
                     padding: min(1.5rem, 4vw);
-                    transition: transform var(--picture-animation-duration) ease, top var(--picture-animation-duration) ease, right var(--picture-animation-duration) ease, bottom var(--picture-animation-duration) ease, left var(--picture-animation-duration) ease;
+                    transition:
+                        transform var(--picture-animation-duration) ease,
+                        top var(--picture-animation-duration) ease,
+                        right var(--picture-animation-duration) ease,
+                        bottom var(--picture-animation-duration) ease,
+                        left var(--picture-animation-duration) ease;
 
                     &.middle {
                         transform: rotate(14deg);

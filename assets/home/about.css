@@ -24,8 +24,70 @@
             }
         }
 
+        .pictures {
+            --picture-height: min(calc(12.5rem), 40vw);
+            --picture-width: calc(var(--picture-height) * 0.95);
+            --picture-radius: 0.5rem;
+            --picture-animation-duration: 0.5s;
+
+            max-width: calc(var(--picture-width) * 2.5);
+            width: 100%;
+
+            .container {
+                margin-top: 4rem;
+                margin-bottom: 7rem;
+                min-height: calc(var(--picture-height) * 1.42);
+                position: relative;
+
+                .picture {
+                    position: absolute;
+                    height: var(--picture-height);
+                    width: var(--picture-width);
+                    background: var(--color-white);
+                    border: 1px solid var(--color-light-gray);
+                    border-radius: var(--picture-radius);
+                    box-shadow: 0 1px 3px 2px rgba(0,0,0,0.08), 0 4px 4px 0 rgba(0,0,0,0.04);
+                    padding: min(1rem, 3vw);
+                    transition:
+                        transform var(--picture-animation-duration) ease,
+                        top var(--picture-animation-duration) ease,
+                        right var(--picture-animation-duration) ease,
+                        bottom var(--picture-animation-duration) ease,
+                        left var(--picture-animation-duration) ease;
+
+                    &.left {
+                        transform: rotate(-1deg);
+                        left: calc(var(--picture-width) / 4);
+                    }
+                    &.right {
+                        transform: rotate(15deg);
+                        left: calc(var(--picture-width) * 1.15);
+                        top: 20%;
+                    }
+
+                    > img {
+                        overflow: hidden;
+                        border-radius: var(--picture-radius);
+                        max-height: calc(var(--picture-height) * 0.7);
+                    }
+
+                    .caption {
+                        font-family: 'Beth Ellen', sans-serif;
+                        font-size: clamp(0.5rem, 3.1vw, 0.875rem);
+                        text-align: center;
+                        margin-top: min(1rem, 2vw);
+                        color: var(--color-black);
+                    }
+                }
+            }
+        }
+
         .text {
+            flex: 1 1 300px;
             max-width: calc(var(--layout-width) / 2.4);
+            @media (max-width: 1000px) {
+                max-width: none;
+            }
 
             p:first-child {
                 margin-top: 0;
@@ -34,6 +96,29 @@
             a {
                 color: var(--color-blue);
             }
+        }
+    }
+
+    .decoration {
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+
+        &.bar {
+            background-image: url('images/about/deco-bar.svg');
+            height: min(3.125rem, 10vw);
+            width: 22.5rem;
+            left: 2rem;
+            bottom: clamp(-3rem, calc((500px - 100vw) / 8 * -1), 0rem);
+            transform: rotate(15deg);
+        }
+
+        &.ellipse {
+            background-image: url('images/about/deco-ellipse.svg');
+            height: min(4.6875rem, 15vw);
+            width: 4.6875rem;
+            left: 10rem;
+            bottom: clamp(-4.5rem, calc(15vw * -1), -4rem);
         }
     }
 }
