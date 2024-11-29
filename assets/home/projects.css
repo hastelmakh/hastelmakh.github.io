@@ -57,6 +57,7 @@
                 height: 500px;
 
                 .name {
+                    margin-top: 0;
                     display: inline-block;
                     font-size: 1.125rem;
                     font-weight: 700;
