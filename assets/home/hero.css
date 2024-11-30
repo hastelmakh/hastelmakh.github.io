@@ -32,6 +32,7 @@
                     background-color: var(--background-color);
                     border: 1px solid var(--border-color);
                     position: relative;
+                    animation: highlight-color-loop 6s infinite linear;
 
                     .corner {
                         --size: 8px;
@@ -41,6 +42,7 @@
                         display: inline-block;
                         background-color: var(--color-white);
                         border: 1px solid var(--border-color);
+                        animation: highlight-color-loop 6s infinite linear;
 
                         &.top-left {
                             top: calc(var(--size) / -2);
@@ -232,5 +234,20 @@
             bottom: -3rem;
             left: max(calc(((100vw - var(--layout-width)) / 2)), var(--layout-margin));
         }
+    }
+}
+
+@keyframes highlight-color-loop {
+    0% {
+        border-color: var(--color-light-green);
+    }
+    33% {
+        border-color: var(--color-pink);
+    }
+    66% {
+        border-color: var(--color-purple);
+    }
+    100% {
+        border-color: var(--color-light-green);
     }
 }
