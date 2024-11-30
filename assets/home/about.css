@@ -163,6 +163,7 @@
                 }
 
                 &:hover {
+                    color: var(--color-purple);
                     text-decoration: none;
 
                     &::before {
