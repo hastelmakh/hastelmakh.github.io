@@ -3,7 +3,8 @@
     color: var(--color-white);
 
     > .layout-content {
-        padding: clamp(5rem, calc((100vw - 40rem) / 2), 7.5rem) 0;
+        padding-top: clamp(5rem, calc((100vw - 40rem) / 2), 7.5rem);
+        padding-bottom: clamp(2.5rem, calc((-100vw + 1000px) / 2), 7.5rem);
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -32,11 +33,11 @@
 
             max-width: calc(var(--picture-width) * 2.5);
             width: 100%;
-            overflow: hidden;
+            overflow-x: clip;
 
             .container {
                 margin-top: 4rem;
-                margin-bottom: 7rem;
+                margin-bottom: 12rem;
                 min-height: calc(var(--picture-height) * 1.42);
                 position: relative;
 
@@ -168,6 +169,32 @@
                 width: 0.7rem;
                 right: min(10rem, 25vw);
                 top: 1rem;
+            }
+        }
+
+        &.hint {
+            border: 1px solid var(--color-white);
+            border-radius: 4px;
+            padding: 0.25em 1em;
+            background-color: var(--color-black);
+            font-size: 0.875rem;
+            font-weight: 600;
+            right: 0;
+            bottom: -9rem;
+
+            &::before {
+                content: '';
+                --size: 33px;
+                width: var(--size);
+                height: var(--size);
+                position: absolute;
+                display: inline-block;
+                background-image: url('images/about/deco-arrow.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                top: calc(var(--size) * -1);
+                left: calc(var(--size) * -1);
+                transform: rotate(-45deg);
             }
         }
     }
