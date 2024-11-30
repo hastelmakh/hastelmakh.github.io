@@ -12,11 +12,11 @@
     background-size: contain;
     position: absolute;
     transition:
-        transform var(--picture-animation-duration) ease,
-        top var(--picture-animation-duration) ease,
-        right var(--picture-animation-duration) ease,
-        bottom var(--picture-animation-duration) ease,
-        left var(--picture-animation-duration) ease;
+        transform var(--animation-duration) ease,
+        top var(--animation-duration) ease,
+        right var(--animation-duration) ease,
+        bottom var(--animation-duration) ease,
+        left var(--animation-duration) ease;
 
     border: 1px solid var(--color-white);
     border-radius: 4px;

@@ -29,7 +29,7 @@
             --picture-height: min(calc(12.5rem), 40vw);
             --picture-width: calc(var(--picture-height) * 0.95);
             --picture-radius: 0.5rem;
-            --picture-animation-duration: 0.7s;
+            --animation-duration: 0.7s;
 
             max-width: calc(var(--picture-width) * 2.5);
             width: 100%;
@@ -51,11 +51,11 @@
                     box-shadow: 0 1px 3px 2px rgba(0,0,0,0.08), 0 4px 4px 0 rgba(0,0,0,0.04);
                     padding: min(1rem, 3vw);
                     transition:
-                        transform var(--picture-animation-duration) ease,
-                        top var(--picture-animation-duration) ease,
-                        right var(--picture-animation-duration) ease,
-                        bottom var(--picture-animation-duration) ease,
-                        left var(--picture-animation-duration) ease;
+                        transform var(--animation-duration) ease,
+                        top var(--animation-duration) ease,
+                        right var(--animation-duration) ease,
+                        bottom var(--animation-duration) ease,
+                        left var(--animation-duration) ease;
 
                     &.left {
                         transform: rotate(-1deg);
@@ -179,11 +179,11 @@
         background-size: contain;
         position: absolute;
         transition:
-            transform var(--picture-animation-duration) ease,
-            top var(--picture-animation-duration) ease,
-            right var(--picture-animation-duration) ease,
-            bottom var(--picture-animation-duration) ease,
-            left var(--picture-animation-duration) ease;
+            transform var(--animation-duration) ease,
+            top var(--animation-duration) ease,
+            right var(--animation-duration) ease,
+            bottom var(--animation-duration) ease,
+            left var(--animation-duration) ease;
 
         &.bar {
             background-image: url('images/about/deco-bar.svg');

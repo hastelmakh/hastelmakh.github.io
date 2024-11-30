@@ -74,7 +74,7 @@
             --picture-height: min(calc(17.875rem), 53vw);
             --picture-width: calc(var(--picture-height) * 0.95);
             --picture-radius: 0.5rem;
-            --picture-animation-duration: 0.5s;
+            --animation-duration: 0.5s;
 
             flex: 1 1 calc(50%);
 
@@ -92,11 +92,11 @@
                     box-shadow: 0 1px 3px 2px rgba(0,0,0,0.08), 0 4px 4px 0 rgba(0,0,0,0.04);
                     padding: min(1.5rem, 4vw);
                     transition:
-                        transform var(--picture-animation-duration) ease,
-                        top var(--picture-animation-duration) ease,
-                        right var(--picture-animation-duration) ease,
-                        bottom var(--picture-animation-duration) ease,
-                        left var(--picture-animation-duration) ease;
+                        transform var(--animation-duration) ease,
+                        top var(--animation-duration) ease,
+                        right var(--animation-duration) ease,
+                        bottom var(--animation-duration) ease,
+                        left var(--animation-duration) ease;
 
                     &.middle {
                         transform: rotate(14deg);
