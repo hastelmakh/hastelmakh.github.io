@@ -29,7 +29,7 @@
             --picture-height: min(calc(12.5rem), 40vw);
             --picture-width: calc(var(--picture-height) * 0.95);
             --picture-radius: 0.5rem;
-            --picture-animation-duration: 0.5s;
+            --picture-animation-duration: 0.7s;
 
             max-width: calc(var(--picture-width) * 2.5);
             width: 100%;
@@ -60,6 +60,7 @@
                     &.left {
                         transform: rotate(-1deg);
                         left: calc(var(--picture-width) / 4);
+                        top: 0;
                     }
                     &.right {
                         transform: rotate(15deg);
@@ -79,6 +80,46 @@
                         text-align: center;
                         margin-top: min(1rem, 2vw);
                         color: var(--color-black);
+                    }
+                }
+            }
+
+            &:hover {
+                .picture {
+                    &.left {
+                        transform: rotate(-10deg);
+                        left: calc(var(--picture-width) / 5);
+                        top: 17%;
+                    }
+                    &.right {
+                        transform: rotate(5deg);
+                        left: calc(var(--picture-width) * 1.15);
+                        top: 10%;
+                    }
+                }
+
+                .decoration {
+                    &.bar {
+                        transform: rotate(-10deg);
+                    }
+                    &.ellipse {
+                        left: 13rem;
+                    }
+                    &.big {
+                        top: -1rem;
+                    }
+                    &.small {
+                        right: min(11rem, 25vw);
+                        top: -1.5rem;
+                    }
+                    &.hint {
+                        right: 1rem;
+                        bottom: -8rem;
+
+                        @media (max-width: 400px) {
+                            right: unset;
+                            left: 1rem;
+                        }
                     }
                 }
             }
@@ -136,6 +177,12 @@
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
+        transition:
+            transform var(--picture-animation-duration) ease,
+            top var(--picture-animation-duration) ease,
+            right var(--picture-animation-duration) ease,
+            bottom var(--picture-animation-duration) ease,
+            left var(--picture-animation-duration) ease;
 
         &.bar {
             background-image: url('images/about/deco-bar.svg');
@@ -195,6 +242,17 @@
                 top: calc(var(--size) * -1);
                 left: calc(var(--size) * -1);
                 transform: rotate(-45deg);
+            }
+
+            @media (max-width: 400px) {
+                right: unset;
+                left: 0;
+
+                &::before {
+                    left: unset;
+                    right: calc(var(--size) * -1);
+                    transform: rotate(45deg);
+                }
             }
         }
     }
