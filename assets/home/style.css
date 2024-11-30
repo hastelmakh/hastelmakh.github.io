@@ -24,6 +24,7 @@
     background-color: var(--color-black);
     font-size: 0.875rem;
     font-weight: 600;
+    color: var(--color-white);
 
     &::before {
         content: '';
@@ -32,7 +33,7 @@
         height: var(--size);
         position: absolute;
         display: inline-block;
-        background-image: url('images/about/deco-arrow.svg');
+        background-image: url('images/deco-arrow.svg');
         background-repeat: no-repeat;
         background-size: contain;
         top: calc(var(--size) * -1);

@@ -140,6 +140,17 @@
                             right: 5%;
                         }
                     }
+                    .hint {
+                        left: -12rem;
+                        bottom: 3.5rem;
+
+                        @media (max-width: 1000px) {
+                            left: unset;
+                            bottom: unset;
+                            top: -26rem;
+                            right: -11.5rem;
+                        }
+                    }
                 }
             }
         }
@@ -188,6 +199,30 @@
             width: clamp(12rem, 70vw, 24rem);
             bottom: -10%;
             right: calc(max(0%, min(25%, (100vw - 600px))));
+        }
+
+        &.hint {
+            left: -11rem;
+            bottom: 5rem;
+            text-wrap: nowrap;
+            @media (max-width: 1000px) {
+                left: unset;
+                bottom: unset;
+                top: -25rem;
+                right: -11rem;
+
+                &::before {
+                    right: unset;
+                    top: unset;
+                    left: calc(var(--size) * -1);
+                    bottom: calc(var(--size) * -1);
+                    transform: rotate(-135deg);
+                }
+            }
+
+            @media (max-width: 800px) {
+                display: none;
+            }
         }
 
         &.eye {
