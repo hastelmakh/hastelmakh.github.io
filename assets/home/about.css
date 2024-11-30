@@ -152,5 +152,23 @@
             left: 10rem;
             bottom: clamp(-4.5rem, calc(15vw * -1), -4rem);
         }
+
+        &.star {
+            background-image: url('images/about/deco-star.svg');
+
+            &.big {
+                height: 1rem;
+                width: 1rem;
+                right: min(6rem, 15vw);
+                top: 0;
+            }
+
+            &.small {
+                height: 0.7rem;
+                width: 0.7rem;
+                right: min(10rem, 25vw);
+                top: 1rem;
+            }
+        }
     }
 }
