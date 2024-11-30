@@ -32,6 +32,7 @@
 
             max-width: calc(var(--picture-width) * 2.5);
             width: 100%;
+            overflow: hidden;
 
             .container {
                 margin-top: 4rem;
