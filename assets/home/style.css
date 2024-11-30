@@ -6,3 +6,58 @@
     font-family: 'Beth Ellen';
     src: url('fonts/beth-ellen.woff2') format('woff2');
 }
+
+.decoration.hint {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    transition:
+        transform var(--picture-animation-duration) ease,
+        top var(--picture-animation-duration) ease,
+        right var(--picture-animation-duration) ease,
+        bottom var(--picture-animation-duration) ease,
+        left var(--picture-animation-duration) ease;
+
+    border: 1px solid var(--color-white);
+    border-radius: 4px;
+    padding: 0.25em 1em;
+    background-color: var(--color-black);
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    &::before {
+        content: '';
+        --size: 33px;
+        width: var(--size);
+        height: var(--size);
+        position: absolute;
+        display: inline-block;
+        background-image: url('images/about/deco-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: calc(var(--size) * -1);
+        right: calc(var(--size) * -1);
+        transform: rotate(45deg);
+    }
+
+    &.top-left::before {
+        top: calc(var(--size) * -1);
+        left: calc(var(--size) * -1);
+        transform: rotate(-45deg);
+    }
+    &.top-right::before {
+        top: calc(var(--size) * -1);
+        right: calc(var(--size) * -1);
+        transform: rotate(45deg);
+    }
+    &.bottom-left::before {
+        bottom: calc(var(--size) * -1);
+        left: calc(var(--size) * -1);
+        transform: rotate(-135deg);
+    }
+    &.bottom-right::before {
+        bottom: calc(var(--size) * -1);
+        right: calc(var(--size) * -1);
+        transform: rotate(135deg);
+    }
+}
