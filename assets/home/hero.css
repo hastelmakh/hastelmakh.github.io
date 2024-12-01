@@ -26,7 +26,7 @@
                 margin: 0;
 
                 .highlight {
-                    --border-color: var(--color-light-green);
+                    --border-color: var(--color-green);
                     --background-color: var(--color-light-gray);
                     padding: 0.17em 0.34em;
                     background-color: var(--background-color);
@@ -249,7 +249,7 @@
 
 @keyframes highlight-color-loop {
     0% {
-        border-color: var(--color-light-green);
+        border-color: var(--color-green);
     }
     33% {
         border-color: var(--color-pink);
@@ -258,6 +258,6 @@
         border-color: var(--color-purple);
     }
     100% {
-        border-color: var(--color-light-green);
+        border-color: var(--color-green);
     }
 }
