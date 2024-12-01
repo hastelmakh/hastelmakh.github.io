@@ -48,13 +48,17 @@
             }
 
             .project {
+                --project-height: 500px;
+                --animation-duration: 0.5s;
                 display: block;
                 color: var(--color-black);
                 text-decoration: none;
                 padding: 1.5rem;
                 border: 1px solid var(--color-black);
                 border-radius: 0.5rem;
-                height: 500px;
+                height: var(--project-height);
+                position: relative;
+                overflow: hidden;
 
                 .name {
                     margin-top: 0;
@@ -69,6 +73,81 @@
 
                 &:hover {
                     box-shadow: var(--shadow);
+                }
+
+                .background {
+                    position: absolute;
+                    z-index: -1;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    transition:
+                        transform var(--animation-duration) ease,
+                        top var(--animation-duration) ease,
+                        right var(--animation-duration) ease,
+                        bottom var(--animation-duration) ease,
+                        left var(--animation-duration) ease;
+                }
+
+                &.billing-history {
+                    .background {
+                        &.shape {
+                            background-image: url('images/projects/billing-history/bg-shape.svg');
+                            width: calc(var(--project-height) * 0.966);
+                            height: calc(var(--project-height) * 0.782);
+                            top: 0;
+                            left: 0;
+                        }
+
+                        &.fog {
+                            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(249, 250, 251, 0.8) 100%);
+                            width: 100%;
+                            height: 50%;
+                            bottom: 0;
+                            left: 0;
+                        }
+
+                        &.image {
+                            width: calc(var(--project-height) * 0.704);
+                            height: calc(var(--project-height) * 0.469);
+                            box-shadow: 0 4px 32px 0 rgba(0,0,0,0.3);
+                            transform: scale(0.9) rotate(35deg) skew(-25deg, -5deg);
+
+                            &.top {
+                                background-image: url('images/projects/billing-history/image-top.jpg');
+                                left: 30%;
+                                bottom: 3rem;
+                            }
+                            &.middle {
+                                background-image: url('images/projects/billing-history/image-middle.jpg');
+                                left: 30%;
+                                bottom: -1rem;
+                            }
+                            &.bottom {
+                                background-image: url('images/projects/billing-history/image-bottom.jpg');
+                                left: 30%;
+                                bottom: -4rem;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .image {
+                            &.top {
+                                bottom: 5rem;
+                            }
+                            &.middle {
+                                bottom: 0;
+                            }
+                            &.bottom {
+                                bottom: -4rem;
+                            }
+                        }
+
+                        .shape {
+                            top: -0.5rem;
+                            left: -0.2rem;
+                        }
+                    }
                 }
             }
         }
