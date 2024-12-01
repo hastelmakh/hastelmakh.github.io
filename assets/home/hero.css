@@ -4,7 +4,7 @@
     overflow-x: clip;
 
     > .layout-content {
-        margin-top: 168px;
+        margin-top: clamp(6rem, calc((100vw - 25rem) / 3), 10.5rem);
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;

@@ -1,6 +1,6 @@
 #section-projects {
     > .layout-content {
-        padding: clamp(5rem, calc((100vw - 40rem) / 2), 7.5rem) 0;
+        padding: 7.5rem 0;
 
         .headline {
             display: flex;
