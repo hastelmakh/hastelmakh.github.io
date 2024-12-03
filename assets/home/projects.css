@@ -397,6 +397,96 @@
                         }
                     }
                 }
+
+                &.byrd-design-system {
+                    .background {
+                        &.shape-pink {
+                            background-image: url('images/projects/byrd-design-system/bg-shape-pink.svg');
+                            width: 13.75rem;
+                            aspect-ratio: 220/342;
+                            left: 0;
+                            bottom: -20%;
+                        }
+                        &.shape-yellow {
+                            background-image: url('images/projects/byrd-design-system/bg-shape-yellow.svg');
+                            width: 13.75rem;
+                            aspect-ratio: 220/342;
+                            right: -10%;
+                            top: 15%;
+                            transform: rotate(90deg);
+                        }
+                        &.box {
+                            --left: 23%;
+                            --bottom: 8%;
+                            --increment: 2%;
+                            border: 1px solid var(--color-black);
+                            border-radius: 0.25rem;
+                            width: 23.75rem;
+                            aspect-ratio: 372/238;
+                            background-color: var(--color-white);
+
+                            &.order-1 {
+                                left: calc(var(--left) + (var(--increment) * 1));
+                                bottom: calc(var(--bottom) + (var(--increment) * 1));
+                            }
+                            &.order-2 {
+                                left: calc(var(--left) + (var(--increment) * 2));
+                                bottom: calc(var(--bottom) + (var(--increment) * 2));
+                            }
+                            &.order-3 {
+                                left: calc(var(--left) + (var(--increment) * 3));
+                                bottom: calc(var(--bottom) + (var(--increment) * 3));
+                            }
+                            &.order-4 {
+                                left: calc(var(--left) + (var(--increment) * 4));
+                                bottom: calc(var(--bottom) + (var(--increment) * 4));
+                            }
+
+                            .header {
+                                width: 100%;
+                                aspect-ratio: 372/24;
+                                background-color: var(--color-blue);
+                                border-bottom: 1px solid var(--color-black);
+                                display: flex;
+                                align-items: center;
+                                gap: 0.25rem;
+                                padding: 0 0.5rem;
+
+                                .control {
+                                    width: 0.5625rem;
+                                    aspect-ratio: 1;
+                                    border-radius: 50%;
+                                    border: 1px solid var(--color-black);
+                                    background-color: var(--color-yellow);
+                                }
+                            }
+
+                            .components {
+                                background-image: url('images/projects/byrd-design-system/components.png');
+                                width: 22.25rem;
+                                aspect-ratio: 356/205;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .background {
+                            &.shape-pink {
+                                left: 0;
+                                bottom: -15%;
+                                transform: rotate(-65deg) scale(150%);
+                            }
+                            &.shape-yellow {
+                                top: 35%;
+                                right: 0;
+                                transform: rotate(70deg) scale(200%);
+                            }
+                            &.box {
+                                --increment: 1.5%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
