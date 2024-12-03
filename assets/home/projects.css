@@ -89,10 +89,10 @@
                         background var(--animation-duration) ease;
                 }
 
-                &.billing-history {
+                &.byrd-billing-history {
                     .background {
                         &.shape {
-                            background-image: url('images/projects/billing-history/bg-shape.svg');
+                            background-image: url('images/projects/byrd-billing-history/bg-shape.svg');
                             width: calc(var(--project-height) * 0.966);
                             height: calc(var(--project-height) * 0.782);
                             top: 0;
@@ -114,17 +114,17 @@
                             transform: scale(0.9) rotate(35deg) skew(-25deg, -5deg);
 
                             &.top {
-                                background-image: url('images/projects/billing-history/image-top.jpg');
+                                background-image: url('images/projects/byrd-billing-history/image-top.jpg');
                                 left: 30%;
                                 bottom: 3rem;
                             }
                             &.middle {
-                                background-image: url('images/projects/billing-history/image-middle.jpg');
+                                background-image: url('images/projects/byrd-billing-history/image-middle.jpg');
                                 left: 30%;
                                 bottom: -1rem;
                             }
                             &.bottom {
-                                background-image: url('images/projects/billing-history/image-bottom.jpg');
+                                background-image: url('images/projects/byrd-billing-history/image-bottom.jpg');
                                 left: 30%;
                                 bottom: -4rem;
                             }
@@ -447,6 +447,8 @@
                                 aspect-ratio: 372/24;
                                 background-color: var(--color-blue);
                                 border-bottom: 1px solid var(--color-black);
+                                border-top-left-radius: 0.25rem;
+                                border-top-right-radius: 0.25rem;
                                 display: flex;
                                 align-items: center;
                                 gap: 0.25rem;
