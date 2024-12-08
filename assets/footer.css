@@ -1,4 +1,4 @@
-#section-footer {
+body > footer {
     background: url('images/bg-grid.svg') repeat;
 
     > .layout-content {
