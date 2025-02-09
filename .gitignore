@@ -3,3 +3,8 @@ Thumbs.db
 .Trash-*
 
 /.idea/
+
+/node_modules/
+/vendor/
+/dist/
+/dist_assets/

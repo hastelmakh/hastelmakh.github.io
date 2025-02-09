@@ -1,0 +1,180 @@
+#section-projects .project {
+    &.byrd-design-system {
+        .background {
+            &.ellipse {
+                width: 25rem;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background-color: var(--color-blue);
+                border: 1px solid var(--color-black);
+                right: -10%;
+                bottom: -17%;
+            }
+
+            &.palette {
+                width: 3rem;
+                aspect-ratio: 48/110;
+                transform-origin: 50% 0.75rem;
+                left: 5%;
+                bottom: -7%;
+
+                &.yellow {
+                    background-image: url('images/preview/bg-palette-yellow.svg');
+                    transform: rotate(-120deg);
+                }
+
+                &.pink {
+                    background-image: url('images/preview/bg-palette-pink.svg');
+                    transform: rotate(-155deg);
+                }
+            }
+
+            &.flower {
+                background-image: url('images/preview/bg-flower.svg');
+                width: 4rem;
+                aspect-ratio: 2;
+                transform-origin: 50% bottom;
+                right: 30%;
+                bottom: 0;
+            }
+
+            &.star {
+                width: 0.75rem;
+                aspect-ratio: 1;
+
+                &.red {
+                    background-image: url('images/preview/bg-star-red.svg');
+                    left: 15%;
+                    top: 35%;
+                }
+                &.purple{
+                    background-image: url('images/preview/bg-star-purple.svg');
+                    right: 5%;
+                    bottom: 3%;
+                }
+            }
+
+            &.cross {
+                aspect-ratio: 1;
+
+                &.green {
+                    background-image: url('images/preview/bg-cross-green.svg');
+                    width: 2rem;
+                    left: 5%;
+                    top: 45%;
+                }
+
+                &.white {
+                    background-image: url('images/preview/bg-cross-white.svg');
+                    width: 1.125rem;
+                    left: 35%;
+                    bottom: 3%;
+                }
+            }
+
+            &.box {
+                --left: 23%;
+                --bottom: 8%;
+                --increment: 2%;
+                border: 1px solid var(--color-black);
+                border-radius: 0.25rem;
+                width: 23.75rem;
+                aspect-ratio: 372/238;
+                background-color: var(--color-white);
+
+                &.order-1 {
+                    left: calc(var(--left) + (var(--increment) * 1));
+                    bottom: calc(var(--bottom) + (var(--increment) * 1));
+                }
+                &.order-2 {
+                    left: calc(var(--left) + (var(--increment) * 2));
+                    bottom: calc(var(--bottom) + (var(--increment) * 2));
+                }
+                &.order-3 {
+                    left: calc(var(--left) + (var(--increment) * 3));
+                    bottom: calc(var(--bottom) + (var(--increment) * 3));
+                }
+                &.order-4 {
+                    left: calc(var(--left) + (var(--increment) * 4));
+                    bottom: calc(var(--bottom) + (var(--increment) * 4));
+                }
+
+                .header {
+                    width: 100%;
+                    aspect-ratio: 372/24;
+                    background-color: var(--color-green);
+                    border-bottom: 1px solid var(--color-black);
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    padding: 0 0.5rem;
+
+                    .control {
+                        width: 0.5625rem;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        border: 1px solid var(--color-black);
+                        background-color: var(--color-yellow);
+                    }
+                }
+
+                .components {
+                    background-image: url('images/preview/components.jpg');
+                    background-size: cover;
+                    width: 22.25rem;
+                    aspect-ratio: 712/410;
+                }
+            }
+        }
+
+        &:hover {
+            .background {
+                &.ellipse {
+                    bottom: -13%;
+                }
+                &.palette {
+                    &.yellow {
+                        transform: rotate(-90deg);
+                    }
+
+                    &.pink {
+                        transform: rotate(-180deg);
+                    }
+                }
+                &.star {
+                    &.red {
+                        transform: scale(1.2);
+                        left: 12%;
+                        top: 30%;
+                    }
+                    &.purple{
+                        transform: scale(1.4);
+                        right: 6%;
+                        bottom: 4%;
+                    }
+                }
+                &.cross {
+                    &.green {
+                        transform: scale(1.1);
+                        left: 3%;
+                        top: 45%;
+                    }
+                    &.white {
+                        transform: scale(1.3);
+                    }
+                }
+                &.flower {
+                    transform: scale(0.8);
+                }
+                &.box {
+                    --increment: 1.5%;
+                    &:not(:last-child) {
+                        background-color: #71BDA0;
+                    }
+                }
+            }
+        }
+    }
+}

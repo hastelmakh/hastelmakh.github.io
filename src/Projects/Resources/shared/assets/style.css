@@ -1,0 +1,60 @@
+@import url('header.css');
+
+body {
+    background-color: var(--color-soft-gray);
+
+    > * > section {
+        &:not(:first-child) {
+            margin-top: 3.5rem;
+        }
+        &:last-child {
+            margin-bottom: 3.5rem;
+        }
+
+        .layout-content {
+            padding: clamp(1.5rem, calc(100vw / 18), 4rem);
+            border-radius: 0.5rem;
+            background-color: var(--color-white);
+        }
+
+        &.title {
+            .layout-content {
+                padding: 4rem 0 0 0;
+                background-color: transparent;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 1rem 2rem;
+            }
+        }
+
+        &.cover {
+            margin-top: 2rem;
+
+            .layout-content {
+                width: var(--layout-width);
+                aspect-ratio: 3/1;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &.about {
+            .layout-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 1rem clamp(1.5rem, calc(100vw / 18), 4rem);
+
+                .description {
+                    max-width: calc(var(--layout-width) / 2.4);
+                }
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+        }
+    }
+}

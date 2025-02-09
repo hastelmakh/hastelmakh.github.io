@@ -1,0 +1,34 @@
+{# @var project \App\Projects\Project #}
+
+{% extends '@Projects~shared/_project.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    {{ asset_import('@Projects~' ~ project.slug ~ '/main.js') }}
+{% endblock %}
+
+{% block content %}
+    <section class="title">
+        <div class="layout-content">
+            <h1>{{ project.name }}</h1>
+            <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/byrd-logo.svg') }}" alt="byrd logo">
+        </div>
+    </section>
+
+    <section class="cover">
+        <div class="layout-content"></div>
+    </section>
+
+    <section class="about">
+        <div class="layout-content">
+            <h2>About the Project</h2>
+
+            <div class="description">
+                This project was created during an <b>internal Hackathon</b> at byrd, a SaaS platform where I worked as
+                a Product Designer. Our team aimed to design a self-service interface where customers could manage their
+                payment history without contacting support. The challenge: streamline a task that was previously only
+                possible via a help ticket.
+            </div>
+        </div>
+    </section>
+{% endblock %}

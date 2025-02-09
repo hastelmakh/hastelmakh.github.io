@@ -1,4 +1,32 @@
-PROJECT_DIR:=$(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+.SILENT:
+.PHONY: $(MAKECMDGOALS)
 
-server:
-	docker run -it --rm -p 80:80 -v "${PROJECT_DIR}:/usr/share/nginx/html" nginx
+PROJECT_DIR:=$(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+DOCKER_RUN:=docker run --rm -it -v "$(PROJECT_DIR):/app" -w "/app"
+IMAGE_NODE:=node:25-alpine
+
+T_RESET:=\033[0m
+T_FG_BOLD:=\033[1m
+T_BG_INVERT:=\033[7m
+
+generate:
+	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Vite$(T_RESET)"
+	$(MAKE) vite-build
+	echo ""
+	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Stasis$(T_RESET)"
+	$(MAKE) stasis-generate
+
+stasis-server:
+	- vendor/bin/stasis server
+
+stasis-generate:
+	vendor/bin/stasis generate
+
+stasis-generate-symlink:
+	vendor/bin/stasis generate --symlink
+
+vite-dev:
+	$(DOCKER_RUN) -p 5173:5173 $(IMAGE_NODE) yarn vite dev
+
+vite-build:
+	$(DOCKER_RUN) $(IMAGE_NODE) yarn vite build

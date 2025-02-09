@@ -1,0 +1,114 @@
+{# @var projects \App\Projects\Project[] #}
+
+{% extends '@Core/_layout.html.twig' %}
+
+{% block meta_description -%}
+    Hanna Stelmakh - Experienced UI/UX designer bringing innovative ideas to life through impactful designs and thoughtful user experience improvements.
+{%- endblock %}
+
+{% block head %}
+    {{ parent() }}
+    {{ asset_import('@Home/main.js') }}
+{% endblock %}
+
+{% block content %}
+    <section id="section-hero">
+        <div class="decoration star small"></div>
+        <div class="decoration star big"></div>
+        <div class="decoration cookie"></div>
+        <div class="decoration flower"></div>
+        <div class="decoration sun"></div>
+        <div class="layout-content">
+            <div class="info">
+                <div class="hello">Hi there!</div>
+                <div class="intro">
+                    <h1>
+                        My name is Hanna<br>I’m a <span class="highlight">UI/UX&nbsp;Designer
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </span>
+                    </h1>
+                </div>
+                <div class="about">I like bringing ideas to life through design and making improvements that add impact.</div>
+            </div>
+            <div class="pictures">
+                <div class="container">
+                    <div class="decoration shapes">
+                        <div class="decoration hint top-right">Catch My Vibe</div>
+                    </div>
+
+                    <div class="picture right">
+                        <img src="{{ asset_path('@Home/images/hero/hanna-3.jpg') }}" alt="Photo of Hanna Stelmakh">
+                    </div>
+                    <div class="picture left">
+                        <img src="{{ asset_path('@Home/images/hero/hanna-1.jpg') }}" alt="Photo of Hanna Stelmakh">
+                    </div>
+                    <div class="picture middle">
+                        <img src="{{ asset_path('@Home/images/hero/hanna-2.jpg') }}" alt="Photo of Hanna Stelmakh">
+                        <div class="caption">Nice to Meet You</div>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration eye"></div>
+        </div>
+    </section>
+
+    <section id="section-projects">
+        <div class="layout-content">
+            <div id="projects" class="headline">
+                <h2>Featured Projects</h2>
+                <div class="text">
+                    <p>Every project starts with a unique challenge, but I always aim for a satisfying, user-friendly outcome.</p>
+                </div>
+            </div>
+            <div class="grid">
+                {% for project in projects %}
+                <article>
+                    <a class="project {{ project.slug }}" href="{{ path(project.routeName) }}">
+                        <h3 class="name">{{ project.name }}</h3>
+                        <div class="description">{{ project.description }}</div>
+                        {% set project_cover = '@Projects~' ~ project.slug ~ '/__preview.html.twig' -%}
+                        {% include project_cover only %}
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="section-about">
+        <div class="layout-content">
+            <div class="pictures">
+                <h2>About Me</h2>
+                <div class="container">
+                    <div class="decoration star small"></div>
+                    <div class="decoration star big"></div>
+                    <div class="decoration bar"></div>
+                    <div class="decoration ellipse"></div>
+                    <div class="decoration hint top-left">Hobbies define me</div>
+                    <div class="picture left">
+                        <img src="{{ asset_path('@Home/images/about/hanna-1.jpg') }}" alt="Photo of Hanna Stelmakh with a book">
+                        <div class="caption">Lost in Books</div>
+                    </div>
+                    <div class="picture right">
+                        <img src="{{ asset_path('@Home/images/about/hanna-2.jpg') }}" alt="Photo of Hanna Stelmakh among group of teens">
+                        <div class="caption">Inspiring Teens</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <p>
+                    Hi, I’m Hanna, a UI/UX Designer who’s all about the details and making designs look just right! I love finding that balance between what users need and what businesses want.
+                </p>
+                <p>
+                    Outside of design, I’m either reading, staying active with sports, or volunteering as a teacher for the nonprofit “Ukrainische Schule Berlin.” I enjoy using my skills to make a difference, both online and in real life.
+                </p>
+                <p>
+                    Let’s connect on <a target="_blank" rel="nofollow noopener" href="{{ block('linkedin_url') }}"><span>LinkedIn</span></a> — I’d love to hear from you!
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

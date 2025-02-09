@@ -1,0 +1,20 @@
+{
+    "name": "hastelmakh/hastelmakh",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": "~8.5",
+        "php-di/php-di": "^7.1",
+        "stasis/stasis": "dev-main",
+        "symfony/filesystem": "^7.3",
+        "twig/twig": "^3.21"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

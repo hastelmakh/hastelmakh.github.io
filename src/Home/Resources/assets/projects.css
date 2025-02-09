@@ -1,0 +1,94 @@
+#section-projects {
+    > .layout-content {
+        padding: 7.5rem 0;
+
+        .headline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            column-gap: calc(var(--layout-margin) * 2);
+
+            h2 {
+                margin: 0 0 1rem 0;
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 0.5em;
+                    height: 0.5em;
+                    background-color: var(--color-green);
+                    border-radius: 50%;
+                    margin-right: 0.3125em;
+                }
+            }
+
+            .text {
+                max-width: 31.25rem;
+
+                p:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+
+            @media (max-width: 1100px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                --project-height: 500px;
+                --animation-duration: 0.5s;
+                display: block;
+                color: var(--color-black);
+                text-decoration: none;
+                padding: 1.5rem;
+                border: 1px solid var(--color-black);
+                border-radius: 0.5rem;
+                height: var(--project-height);
+                position: relative;
+                overflow: hidden;
+
+                .name {
+                    margin-top: 0;
+                    display: inline-block;
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                }
+
+                .description {
+                    margin-top: 0.5rem;
+                }
+
+                &:hover {
+                    box-shadow: var(--shadow);
+                }
+
+                .background {
+                    position: absolute;
+                    z-index: -1;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    transition:
+                        transform var(--animation-duration) ease,
+                        top var(--animation-duration) ease,
+                        right var(--animation-duration) ease,
+                        bottom var(--animation-duration) ease,
+                        left var(--animation-duration) ease,
+                        background var(--animation-duration) ease;
+                }
+            }
+        }
+    }
+}

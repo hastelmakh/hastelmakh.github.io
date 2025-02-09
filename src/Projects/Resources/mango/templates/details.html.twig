@@ -1,0 +1,11 @@
+{# @var project \App\Projects\Project #}
+
+{% extends '@Projects~shared/_project.html.twig' %}
+
+{% block content %}
+    <section class="title">
+        <div class="layout-content">
+            <h1>{{ project.name }}</h1>
+        </div>
+    </section>
+{% endblock %}

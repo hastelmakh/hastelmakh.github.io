@@ -1,0 +1,18 @@
+{# @var project \App\Projects\Project #}
+
+{% extends '@Core/_layout.html.twig' %}
+
+{% block title -%}{{ project.name }}{%- endblock %}
+{% block meta_description -%}{{ project.description }}{%- endblock %}
+{% block head %}
+    {{ parent() }}
+    {{ asset_import('@Projects~shared/main.js') }}
+{% endblock %}
+
+{% block body_class -%}project {{ project.slug }}{%- endblock %}
+
+{% block header %}
+    <div class="layout-content">
+        <a class="back" href="{{ path('home') }}#projects">Back to Projects</a>
+    </div>
+{% endblock %}

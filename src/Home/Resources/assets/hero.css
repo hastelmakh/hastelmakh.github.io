@@ -1,0 +1,263 @@
+#section-hero {
+    background: url('../../../Core/Resources/assets/images/bg-grid.svg') repeat;
+    position: relative;
+    overflow-x: clip;
+
+    > .layout-content {
+        margin-top: clamp(6rem, calc((100vw - 25rem) / 3), 10.5rem);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .info {
+            --scale-divider: 38; /* bigger value makes text smaller on smaller viewports */
+            font-size: clamp(0.5rem, calc(100vw / var(--scale-divider)), 1rem);
+            max-width: calc(var(--layout-width) / 2.4);
+            margin-bottom: 4rem;
+
+            .hello {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .intro h1 {
+                font-size: 3em;
+                line-height: 1.55em;
+                margin: 0;
+
+                .highlight {
+                    --border-color: var(--color-green);
+                    --background-color: var(--color-light-gray);
+                    padding: 0.17em 0.34em;
+                    background-color: var(--background-color);
+                    border: 1px solid var(--border-color);
+                    position: relative;
+                    animation: highlight-color-loop 6s infinite linear;
+
+                    .corner {
+                        --size: 8px;
+                        width: var(--size);
+                        height: var(--size);
+                        position: absolute;
+                        display: inline-block;
+                        background-color: var(--color-white);
+                        border: 1px solid var(--border-color);
+                        animation: highlight-color-loop 6s infinite linear;
+
+                        &.top-left {
+                            top: calc(var(--size) / -2);
+                            left: calc(var(--size) / -2);
+                        }
+                        &.top-right {
+                            top: calc(var(--size) / -2);
+                            right: calc(var(--size) / -2);
+                        }
+                        &.bottom-left {
+                            bottom: calc(var(--size) / -2);
+                            left: calc(var(--size) / -2);
+                        }
+                        &.bottom-right {
+                            bottom: calc(var(--size) / -2);
+                            right: calc(var(--size) / -2);
+                        }
+                    }
+                }
+            }
+
+            .about {
+                color: var(--color-dark-gray);
+                margin-top: 1.25em;
+                font-size: 1.25rem;
+                line-height: 1.7em;
+            }
+        }
+
+        .pictures {
+            --picture-height: min(calc(17.875rem), 53vw);
+            --picture-width: calc(var(--picture-height) * 0.95);
+            --picture-radius: 0.5rem;
+            --animation-duration: 0.5s;
+
+            flex: 1 1 calc(50%);
+
+            .container {
+                min-height: calc(var(--picture-height) * 1.42);
+                position: relative;
+
+                .picture {
+                    position: absolute;
+                    height: var(--picture-height);
+                    width: var(--picture-width);
+                    background: var(--color-white);
+                    border: 1px solid var(--color-light-gray);
+                    border-radius: var(--picture-radius);
+                    box-shadow: var(--shadow);
+                    padding: min(1.5rem, 4vw);
+                    transition:
+                        transform var(--animation-duration) ease,
+                        top var(--animation-duration) ease,
+                        right var(--animation-duration) ease,
+                        bottom var(--animation-duration) ease,
+                        left var(--animation-duration) ease;
+
+                    &.middle {
+                        transform: rotate(14deg);
+                        right: 25%;
+                    }
+                    &.left {
+                        transform: rotate(-1deg);
+                        right: 40%;
+                    }
+                    &.right {
+                        transform: rotate(29deg);
+                        right: 10%;
+                    }
+
+                    > img {
+                        overflow: hidden;
+                        border-radius: var(--picture-radius);
+                        max-height: calc(var(--picture-height) * 0.7);
+                    }
+
+                    .caption {
+                        font-family: 'Beth Ellen', sans-serif;
+                        font-size: clamp(0.875rem, 3.5vw, 1.125rem);
+                        text-align: center;
+                        margin-top: min(1.5rem, 4vw);
+                    }
+                }
+
+                &:hover {
+                    .picture {
+                        &.middle {
+                            transform: rotate(10deg);
+                            right: 27%;
+                        }
+                        &.left {
+                            transform: rotate(-10deg);
+                            right: 50%;
+                        }
+                        &.right {
+                            transform: rotate(35deg);
+                            right: 5%;
+                        }
+                    }
+                    .hint {
+                        left: -12rem;
+                        bottom: 3.5rem;
+
+                        @media (max-width: 1000px) {
+                            left: unset;
+                            bottom: unset;
+                            top: -26rem;
+                            right: -11.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .decoration {
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+
+        &.star {
+            background-image: url('images/hero/deco-star.svg');
+
+            &.big {
+                height: 1.25rem;
+                width: 1.25rem;
+                top: 2rem;
+                left: max((100vw - var(--layout-width)) / 2, 4px);
+            }
+
+            &.small {
+                height: 0.8rem;
+                width: 0.8rem;
+                top: 5rem;
+                left: 42%;
+            }
+        }
+
+        &.cookie {
+            background-image: url('images/hero/deco-cookie.svg');
+            height: 2.0625rem;
+            width: 2.0625rem;
+            top: 20rem;
+            left: max(((100vw - var(--layout-width)) / 2) - 8rem, -8rem);
+        }
+
+        &.flower {
+            background-image: url('images/hero/deco-flower.svg');
+            height: 3.125rem;
+            width: 3.125rem;
+            top: 4rem;
+            right: max(((100vw - var(--layout-width)) / 2) + 24px, 24px);
+        }
+
+        &.sun {
+            background-image: url('images/hero/deco-sun.svg');
+            height: 2.5rem;
+            width: 2.5rem;
+            top: 28rem;
+            right: max(((100vw - var(--layout-width)) / 2) - 1.25rem, -1.25rem);
+        }
+
+        &.shapes {
+            background-image: url('images/hero/deco-shapes.svg');
+            height: clamp(5.1rem, 30vw, 10.2rem);
+            width: clamp(12rem, 70vw, 24rem);
+            bottom: -10%;
+            right: calc(max(0%, min(25%, (100vw - 600px))));
+        }
+
+        &.hint {
+            left: -11rem;
+            bottom: 5rem;
+            text-wrap: nowrap;
+            @media (max-width: 1000px) {
+                left: unset;
+                bottom: unset;
+                top: -25rem;
+                right: -11rem;
+
+                &::before {
+                    right: unset;
+                    top: unset;
+                    left: calc(var(--size) * -1);
+                    bottom: calc(var(--size) * -1);
+                    transform: rotate(-135deg);
+                }
+            }
+
+            @media (max-width: 800px) {
+                display: none;
+            }
+        }
+
+        &.eye {
+            background-image: url('images/hero/deco-eye.svg');
+            height: 6.625rem;
+            width: 6.625rem;
+            bottom: -3rem;
+            left: max(calc(((100vw - var(--layout-width)) / 2)), var(--layout-margin));
+        }
+    }
+}
+
+@keyframes highlight-color-loop {
+    0% {
+        border-color: var(--color-green);
+    }
+    33% {
+        border-color: var(--color-pink);
+    }
+    66% {
+        border-color: var(--color-purple);
+    }
+    100% {
+        border-color: var(--color-green);
+    }
+}
