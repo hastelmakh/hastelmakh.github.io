@@ -1,66 +1,64 @@
-#section-projects .project {
-    &.byrd-billing-history {
+#section-projects .project[data-id="byrd-billing-history"] {
+    .background {
+        &.shape {
+            background-image: url('images/preview/bg-shape.svg');
+            width: calc(var(--project-height) * 0.966);
+            height: calc(var(--project-height) * 0.782);
+            top: 0;
+            left: 0;
+        }
+
+        &.fog {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(249, 250, 251, 0.8) 100%);
+            width: 100%;
+            height: 50%;
+            bottom: 0;
+            left: 0;
+        }
+
+        &.image {
+            width: calc(var(--project-height) * 0.704);
+            height: calc(var(--project-height) * 0.469);
+            box-shadow: 0 4px 32px 0 rgba(0,0,0,0.3);
+            transform: scale(0.9) rotate(35deg) skew(-25deg, -5deg);
+
+            &.top {
+                background-image: url('images/preview/image-top.jpg');
+                left: 30%;
+                bottom: 3rem;
+            }
+            &.middle {
+                background-image: url('images/preview/image-middle.jpg');
+                left: 30%;
+                bottom: -1rem;
+            }
+            &.bottom {
+                background-image: url('images/preview/image-bottom.jpg');
+                left: 30%;
+                bottom: -4rem;
+            }
+        }
+    }
+
+    &:hover {
         .background {
-            &.shape {
-                background-image: url('images/preview/bg-shape.svg');
-                width: calc(var(--project-height) * 0.966);
-                height: calc(var(--project-height) * 0.782);
-                top: 0;
-                left: 0;
-            }
-
-            &.fog {
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(249, 250, 251, 0.8) 100%);
-                width: 100%;
-                height: 50%;
-                bottom: 0;
-                left: 0;
-            }
-
             &.image {
-                width: calc(var(--project-height) * 0.704);
-                height: calc(var(--project-height) * 0.469);
-                box-shadow: 0 4px 32px 0 rgba(0,0,0,0.3);
-                transform: scale(0.9) rotate(35deg) skew(-25deg, -5deg);
-
                 &.top {
-                    background-image: url('images/preview/image-top.jpg');
-                    left: 30%;
-                    bottom: 3rem;
+                    bottom: 5rem;
                 }
+
                 &.middle {
-                    background-image: url('images/preview/image-middle.jpg');
-                    left: 30%;
-                    bottom: -1rem;
+                    bottom: 0;
                 }
+
                 &.bottom {
-                    background-image: url('images/preview/image-bottom.jpg');
-                    left: 30%;
                     bottom: -4rem;
                 }
             }
-        }
 
-        &:hover {
-            .background {
-                &.image {
-                    &.top {
-                        bottom: 5rem;
-                    }
-
-                    &.middle {
-                        bottom: 0;
-                    }
-
-                    &.bottom {
-                        bottom: -4rem;
-                    }
-                }
-
-                &.shape {
-                    top: -0.5rem;
-                    left: -0.2rem;
-                }
+            &.shape {
+                top: -0.5rem;
+                left: -0.2rem;
             }
         }
     }
