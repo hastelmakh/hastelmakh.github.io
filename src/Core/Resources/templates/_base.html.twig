@@ -17,8 +17,7 @@
         {% block head %}{% endblock %}
     </head>
 
-    {% set body_class = block('body_class') ?? '' -%}
-    <body class="{{ body_class | striptags | raw  }}">
+    <body>
         {% block body %}{% endblock %}
     </body>
 </html>
