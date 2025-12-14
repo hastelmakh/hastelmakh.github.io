@@ -6,7 +6,7 @@
 {% block meta_description -%}{{ project.description }}{%- endblock %}
 {% block head %}
     {{ parent() }}
-    {{ asset_import('@Projects~shared/main.js') }}
+    {{ asset_import('@Projects~_shared/main.js') }}
 {% endblock %}
 
 {% block body_class -%}project {{ project.slug }}{%- endblock %}
