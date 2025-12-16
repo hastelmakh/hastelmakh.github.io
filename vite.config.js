@@ -10,7 +10,7 @@ export default {
         assetsInlineLimit: 0, // disable inlining of assets
         rollupOptions: {
             input: [
-                ...globSync('./src/Shared/Resources/assets/asset_importer.js'), // referencing assets to be copied to dist
+                ...globSync('./src/Core/Resources/assets/asset_importer.js'), // referencing assets to be copied to dist
                 ...globSync('./src/*/Resources/**/assets/**/main.js'), // entry-points
             ],
         },
