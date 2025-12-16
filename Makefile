@@ -9,6 +9,13 @@ T_RESET:=\033[0m
 T_FG_BOLD:=\033[1m
 T_BG_INVERT:=\033[7m
 
+setup:
+	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Composer$(T_RESET)"
+	composer install
+	echo ""
+	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Yarn$(T_RESET)"
+	$(DOCKER_RUN) $(IMAGE_NODE) yarn install
+
 generate:
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Vite$(T_RESET)"
 	$(MAKE) vite-build
