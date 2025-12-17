@@ -1,0 +1,80 @@
+main > section.steps {
+    h2 {
+        margin-bottom: clamp(1.5rem, calc(100vw / 25), 3rem);
+    }
+
+    .list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+
+        .card {
+            background: var(--color-project-teal);
+            color: var(--color-white);
+            border-radius: .5rem;
+            padding: 1.5rem;
+            min-height: 9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            .image {
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+                border: 1px solid var(--color-white);
+                display: grid;
+                place-items: center;
+                user-select: none;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &.magnifier {
+                    background-image: url('images/steps/magnifier.svg');
+                }
+
+                &.brain {
+                    background-image: url('images/steps/brain.svg');
+                }
+
+                &.paintbrush {
+                    background-image: url('images/steps/paintbrush.svg');
+                }
+
+                &.megaphone {
+                    background-image: url('images/steps/megaphone.svg');
+                }
+            }
+
+            .name {
+                margin-top: 1rem;
+                font-size: 1.125rem;
+                font-weight: 700;
+            }
+        }
+
+        .actions {
+            list-style: none;
+            margin: 0;
+
+            li {
+                background: var(--color-light-gray);
+                border-radius: .5rem;
+                padding: .5rem 1rem;
+                font-size: 0.875rem;
+                margin-top: .5rem;
+            }
+        }
+    }
+}

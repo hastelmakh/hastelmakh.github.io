@@ -1,5 +1,6 @@
-main > section {
-    &.cover .layout-content {
-        background-image: url('images/cover.png');
-    }
+@import url('cover.css');
+@import url('steps.css');
+
+body {
+    --color-project-teal: #4E9B8C;
 }
