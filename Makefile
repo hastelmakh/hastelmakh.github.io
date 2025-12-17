@@ -23,6 +23,9 @@ generate:
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Stasis$(T_RESET)"
 	$(MAKE) stasis-generate
 
+docker-node:
+	$(DOCKER_RUN) $(IMAGE_NODE) sh
+
 stasis-server:
 	- vendor/bin/stasis server
 
