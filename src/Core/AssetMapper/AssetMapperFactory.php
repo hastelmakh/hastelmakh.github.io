@@ -31,13 +31,6 @@ class AssetMapperFactory
 
     private function isDev(): bool
     {
-        $fp = @fsockopen('localhost', 5173);
-        $isDev = $fp !== false;
-
-        if (is_resource($fp)) {
-            fclose($fp);
-        }
-
-        return $isDev;
+        return getenv('APP_ENV') === 'dev';
     }
 }
