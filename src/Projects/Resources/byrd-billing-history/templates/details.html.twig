@@ -26,12 +26,9 @@
 
                 <div class="description">
                     This project was created during an <b>internal Hackathon</b> at byrd, a SaaS platform where I worked
-                    as
-                    a Product Designer. Our team aimed to design a self-service interface where customers could manage
-                    their
-                    payment history without contacting support. The challenge: streamline a task that was previously
-                    only
-                    possible via a help ticket.
+                    as a Product Designer. Our team aimed to design a self-service interface where customers could
+                    manage their payment history without contacting support. The challenge: streamline a task that was
+                    previously only possible via a help ticket.
                 </div>
             </div>
         </div>
@@ -156,6 +153,71 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="idea">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Idea Process</h2>
+
+                <div class="description">
+                    We explored competitors, spoke with support staff, and gathered internal feedback. The insights
+                    helped us imagine a simpler, clearer solution. Our goal was to anticipate user needs and make
+                    answers instantly accessible.
+                </div>
+            </div>
+
+            <ul class="list">
+                {% set items = [
+                    {
+                        'image': 'download',
+                        'hint': 'Download',
+                        'title': 'Simplify invoice downloads',
+                        'text': 'Ensure users can easily download invoices with one click.',
+                    },
+                    {
+                        'image': 'filter',
+                        'hint': 'Filtering',
+                        'title': 'Add filtering options',
+                        'text': 'Allow users to filter payment history by date, amount, or status + additional info.',
+                    },
+                    {
+                        'image': 'file',
+                        'hint': 'Status',
+                        'title': 'Clear payment status labels',
+                        'text': 'Use simple, recognisable labels like "Paid," "Pending," or "Overdue."',
+                    },
+                    {
+                        'image': 'notifications',
+                        'hint': 'Notifications',
+                        'title': 'Automated reminders',
+                        'text': 'Offer users the ability to set reminders for upcoming payments.',
+                    },
+                    {
+                        'image': 'checklist',
+                        'hint': 'Actions',
+                        'title': 'Bulk invoice actions',
+                        'text': 'Let users select and manage multiple invoices at once.',
+                    },
+                    {
+                        'image': 'glasses',
+                        'hint': 'Content',
+                        'title': 'View details option',
+                        'text': 'Let users click on an invoice for a detailed breakdown of charges.',
+                    },
+                ] %}
+                {% for item in items %}
+                    <li>
+                        <div class="head">
+                            <div class="image {{ item.image }}" aria-hidden="true"></div>
+                            <div class="hint">{{ item.hint }}</div>
+                        </div>
+                        <h3>{{ item.title }}</h3>
+                        <p class="text">{{ item.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 {% endblock %}

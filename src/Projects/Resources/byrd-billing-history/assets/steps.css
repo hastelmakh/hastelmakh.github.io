@@ -30,8 +30,6 @@ main > section.steps {
                 height: 3.5rem;
                 border-radius: 50%;
                 border: 1px solid var(--color-white);
-                display: grid;
-                place-items: center;
                 user-select: none;
                 background-position: center;
                 background-repeat: no-repeat;
