@@ -1,4 +1,6 @@
 {# @var project \App\Projects\Project #}
+{# @var previous \App\Projects\Project #}
+{# @var next \App\Projects\Project #}
 
 {% extends '@Core/_layout.html.twig' %}
 
@@ -13,4 +15,21 @@
     <div class="layout-content">
         <a class="back" href="{{ path('home') }}#projects">Back to Projects</a>
     </div>
+{% endblock %}
+
+{% block content %}
+    {% block content_project %}{% endblock %}
+
+    <section class="explore-more">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Keep Exploring</h2>
+            </div>
+
+            <div class="links">
+                <a class="previous" href="{{ path(previous.routeName) }}">{{ previous.name}}</a>
+                <a class="next" href="{{ path(next.routeName) }}">{{ next.name}}</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

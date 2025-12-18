@@ -3,6 +3,7 @@ body > header {
     padding: 1.5rem 0;
 
     a.back {
+        --animation-duration: 0.2s;
         display: inline-block;
         padding: 0.25em 1em;
         border: 1px solid var(--color-black);
@@ -10,6 +11,9 @@ body > header {
         color: var(--color-black);
         text-decoration: none;
         background-color: var(--color-white);
+        transition:
+            color var(--animation-duration) ease,
+            background-color var(--animation-duration) ease;
 
         &:before {
             content: '';
@@ -20,6 +24,7 @@ body > header {
             vertical-align: middle;
             margin-bottom: 0.16em;
             margin-right: 0.25em;
+            transition: transform var(--animation-duration) ease;
         }
 
         &:hover {
@@ -28,6 +33,7 @@ body > header {
 
             &:before {
                 filter: invert(1);
+                transform: translateX(-0.25rem);
             }
         }
     }
