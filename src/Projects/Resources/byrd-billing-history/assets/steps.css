@@ -1,8 +1,4 @@
 main > section.steps {
-    h2 {
-        margin-bottom: clamp(1.5rem, calc(100vw / 25), 3rem);
-    }
-
     .list {
         list-style: none;
         display: grid;

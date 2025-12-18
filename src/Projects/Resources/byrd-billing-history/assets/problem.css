@@ -1,16 +1,4 @@
 main > section.problem {
-    .headline {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem clamp(1.5rem, calc(100vw / 18), 4rem);
-        margin-bottom: 3rem;
-
-        .description {
-            max-width: calc(var(--layout-width) / 2.4);
-        }
-    }
-
     .problem-table {
         border: 1px solid var(--color-project-teal);
         border-radius: .5rem;
