@@ -78,8 +78,8 @@ main > section {
                 --animation-duration: 0.2s;
                 --side-padding: 2rem;
                 --icon-space: 0.25em;
-                --icon-margin-bottom: clamp(0, calc(100vw / -30), -0.1em);
-                --icon-width: 1.5em;
+                --icon-margin-bottom: clamp(0em, calc(540px - 100vw), 0.15em);
+                --icon-width: 1.34em;
                 --icon-move-length: 0.5em;
 
                 display: block;
