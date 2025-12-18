@@ -41,48 +41,41 @@
             </div>
 
             <ol class="list">
-                <li>
-                    <div class="card">
-                        <div class="image magnifier" aria-hidden="true"></div>
-                        <h3 class="name">Research</h3>
-                    </div>
-                    <ul class="actions">
-                        <li>Competitor Analysis</li>
-                        <li>Stakeholder Interview</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <div class="card">
-                        <div class="image brain" aria-hidden="true"></div>
-                        <h3 class="name">Ideation</h3>
-                    </div>
-                    <ul class="actions">
-                        <li>Brainstorming</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <div class="card">
-                        <div class="image paintbrush" aria-hidden="true"></div>
-                        <h3 class="name">Design</h3>
-                    </div>
-                    <ul class="actions">
-                        <li>Wireframes</li>
-                        <li>Hi-Fi Layouts</li>
-                        <li>Prototype</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <div class="card">
-                        <div class="image megaphone" aria-hidden="true"></div>
-                        <h3 class="name">Presentation</h3>
-                    </div>
-                    <ul class="actions">
-                        <li>Pitch Deck</li>
-                    </ul>
-                </li>
+                {% set items = [
+                    {
+                        'image': 'magnifier',
+                        'name': 'Research',
+                        'actions': ['Competitor Analysis', 'Stakeholder Interview'],
+                    },
+                    {
+                        'image': 'brain',
+                        'name': 'Ideation',
+                        'actions': ['Brainstorming'],
+                    },
+                    {
+                        'image': 'paintbrush',
+                        'name': 'Design',
+                        'actions': ['Wireframes', 'Hi-Fi Layouts', 'Prototype'],
+                    },
+                    {
+                        'image': 'megaphone',
+                        'name': 'Presentation',
+                        'actions': ['Pitch Deck'],
+                    },
+                ] %}
+                {% for item in items %}
+                    <li>
+                        <div class="card">
+                            <div class="image {{ item.image }}" aria-hidden="true"></div>
+                            <h3 class="name">{{ item.name }}</h3>
+                        </div>
+                        <ul class="actions">
+                            {% for action in item.actions %}
+                                <li>{{ action }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
             </ol>
         </div>
     </section>
@@ -100,58 +93,48 @@
             </div>
 
             <div class="problem-table" role="table" aria-label="User problem details">
-                <div class="row" role="row">
-                    <div class="cell label" role="rowheader">
-                        <div class="title">Who</div>
-                        <div class="subtitle">who is affected by the problem?</div>
+                {% set rows = [
+                    {
+                        'title': 'Who',
+                        'subtitle': 'who is affected by the problem?',
+                        'value1': 'Customers',
+                        'value2': 'Customer Support Employees',
+                    },
+                    {
+                        'title': 'What',
+                        'subtitle': 'what is the problem?',
+                        'value1': 'Don\'t have a centralized place where they can manage their invoices',
+                        'value2': 'Overwhelmed with Customers requests (raised tickets) about providing invoices',
+                    },
+                    {
+                        'title': 'Where',
+                        'subtitle': 'where does this problem occur?',
+                        'value1': 'Emails / Customer Dashboard',
+                        'value2': 'Freshdesk',
+                    },
+                    {
+                        'title': 'When',
+                        'subtitle': 'when does the problem occur?',
+                        'value1': 'At the end of each month',
+                        'value2': 'At the end of each month',
+                    },
+                    {
+                        'title': 'Why',
+                        'subtitle': 'why does the problem occur?',
+                        'value1': 'Users receive invoices only per email. So they have to manage them somehow',
+                        'value2': 'No way to see if the users received invoice by email',
+                    },
+                ] %}
+                {% for row in rows %}
+                    <div class="row" role="row">
+                        <div class="cell label" role="rowheader">
+                            <div class="title">{{ row.title }}</div>
+                            <div class="subtitle">{{ row.subtitle }}</div>
+                        </div>
+                        <div class="cell value" role="cell">{{ row.value1 }}</div>
+                        <div class="cell value" role="cell">{{ row.value2 }}</div>
                     </div>
-                    <div class="cell value" role="cell">Customers</div>
-                    <div class="cell value" role="cell">Customer Support Employees</div>
-                </div>
-
-                <div class="row" role="row">
-                    <div class="cell label" role="rowheader">
-                        <div class="title">What</div>
-                        <div class="subtitle">what is the problem?</div>
-                    </div>
-                    <div class="cell value" role="cell">
-                        Don’t have a centralized place where they can manage their invoices
-                    </div>
-                    <div class="cell value" role="cell">
-                        Overwhelmed with Customers requests (raised tickets) about providing invoices
-                    </div>
-                </div>
-
-                <div class="row" role="row">
-                    <div class="cell label" role="rowheader">
-                        <div class="title">Where</div>
-                        <div class="subtitle">where does this problem occur?</div>
-                    </div>
-                    <div class="cell value" role="cell">Emails / Customer Dashboard</div>
-                    <div class="cell value" role="cell">Freshdesk</div>
-                </div>
-
-                <div class="row" role="row">
-                    <div class="cell label" role="rowheader">
-                        <div class="title">When</div>
-                        <div class="subtitle">when does the problem occur?</div>
-                    </div>
-                    <div class="cell value" role="cell">In the end of each month</div>
-                    <div class="cell value" role="cell">In the end of each month</div>
-                </div>
-
-                <div class="row" role="row">
-                    <div class="cell label" role="rowheader">
-                        <div class="title">Why</div>
-                        <div class="subtitle">why does the problem occur?</div>
-                    </div>
-                    <div class="cell value" role="cell">
-                        Users receive invoices only per email. So they have to manage them somehow
-                    </div>
-                    <div class="cell value" role="cell">
-                        No way to see if the users received invoice by email
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
