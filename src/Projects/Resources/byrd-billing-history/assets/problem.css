@@ -1,0 +1,73 @@
+main > section.problem {
+    .headline {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem clamp(1.5rem, calc(100vw / 18), 4rem);
+        margin-bottom: 3rem;
+
+        .description {
+            max-width: calc(var(--layout-width) / 2.4);
+        }
+    }
+
+    .problem-table {
+        border: 1px solid var(--color-project-teal);
+        border-radius: .5rem;
+        padding: 2rem;
+
+        @media (max-width: 700px) {
+            padding: 1rem;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            + .row {
+                border-top: 1px solid var(--color-medium-gray);
+            }
+
+            @media (max-width: 1000px) {
+                gap: 1rem;
+            }
+
+            @media (max-width: 700px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: .75rem;
+            }
+        }
+
+        .cell {
+            &.label {
+                .title {
+                    font-weight: 700;
+                }
+
+                .subtitle {
+                    margin-top: 4px;
+                    color: var(--color-dark-gray);
+                    font-size: 0.875rem;
+                }
+
+                @media (max-width: 700px) {
+                    grid-column: 1 / -1;
+                }
+            }
+
+            &.value {
+                font-size: clamp(.75rem, calc(100vw / 30), 1rem);
+                line-height: clamp(1.25rem, calc(100vw / 20), 1.5em);
+            }
+        }
+    }
+}
