@@ -60,6 +60,21 @@ main > section {
         }
     }
 
+    &.figma {
+        .layout-content {
+            padding: 0;
+            background-color: transparent;
+        }
+
+        iframe {
+            width: 100%;
+            height: clamp(320px, calc(100vw / 1.5) ,800px);
+            max-height: 100vh;
+            border: none;
+            border-radius: 0.5rem;
+        }
+    }
+
     &.explore-more {
         .layout-content {
             background: transparent;
