@@ -17,5 +17,6 @@ document.addEventListener('click', e => {
     }
 
     e.preventDefault();
-    lightbox.openWithImage(image.src, image.alt);
+    const scale = parseFloat(image.dataset.lightboxScale ?? 1);
+    lightbox.openWithImage(image.src, scale, image.alt);
 });

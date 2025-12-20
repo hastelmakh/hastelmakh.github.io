@@ -3,12 +3,25 @@ import './lightbox.css'
 export default {
     /**
      * @param src {string} Path to image
+     * @param scale {number} Scale factor
      * @param alt {string} Alternative text
      */
-    openWithImage: function (src, alt = '') {
+    openWithImage: function (src, scale = 1, alt = '') {
         const image = document.createElement('img');
         image.src = src;
         image.alt = alt;
+
+        // display raster images twice smaller (for good quality on retina/hidpi displays)
+        if (image.complete && image.naturalWidth) {
+            image.style.width = (image.naturalWidth * scale) + 'px';
+            image.style.height = 'auto';
+        } else {
+            image.addEventListener('load', () => {
+                image.style.width = (image.naturalWidth * scale) + 'px';
+                image.style.height = 'auto';
+            }, { once: true });
+        }
+
         lightbox.open(image);
     },
 
@@ -25,9 +38,14 @@ const lightbox = {
      * @param element {HTMLElement}
      * */
     open: function (element) {
+        const viewport = document.createElement('div');
+        viewport.className = 'viewport';
+        viewport.appendChild(element);
+
         this.dialog = document.createElement('dialog');
         this.dialog.className = 'lightbox';
-        this.dialog.innerHTML = `<div class="viewport">${element.outerHTML}</div>`;
+        this.dialog.appendChild(viewport);
+
         document.body.appendChild(this.dialog);
 
         scroll.disable();
