@@ -16,13 +16,13 @@
 
     <footer>
         <div class="layout-content">
-            <div class="contact"><a class="linkedin" target="_blank" rel="nofollow noopener" href="{{ block('linkedin_url') }}">LinkedIn</a></div>
+            <div class="contact"><a class="linkedin" target="_blank" rel="nofollow noopener" href="{{ block('linkedin_url') }}" aria-label="LinkedIn profile of Hanna Stelmakh">LinkedIn</a></div>
             <div class="copyright">
                 <div class="container">
                     <div class="text">&copy; Hanna Stelmakh</div><div class="mouse"></div>
                 </div>
             </div>
-            <div class="credits"><a href="#">Credits</a></div>
+            <div class="credits"><a href="{{ path('credits') }}">Credits</a></div>
         </div>
     </footer>
 {%- endblock %}

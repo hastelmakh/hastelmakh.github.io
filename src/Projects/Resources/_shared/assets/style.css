@@ -1,4 +1,4 @@
-@import url('header.css');
+@import url('../../../../Core/Resources/assets/header_back.css');
 
 body {
     background-color: var(--color-soft-gray);

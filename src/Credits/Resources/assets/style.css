@@ -1,0 +1,64 @@
+@import url('../../../Core/Resources/assets/header_back.css');
+
+main {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+main > section {
+    padding-top: 4.5rem;
+
+    &:last-child {
+        padding-bottom: 4.5rem;
+    }
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    .layout-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        h2 {
+            width: 16rem;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 0.5em;
+                height: 0.5em;
+                border-radius: 50%;
+                margin-right: 0.3125em;
+            }
+
+            &.purple::before {
+                background-color: var(--color-purple);
+            }
+            &.pink::before {
+                background-color: var(--color-pink);
+            }
+        }
+
+        .description {
+            max-width: calc(var(--layout-width) / 2.4);
+        }
+
+        ul.links {
+            margin-top: 1rem;
+            list-style: none;
+            display: flex;
+            gap: 1em;
+
+            li + li {
+                border-left: 1px solid var(--color-gray);
+                padding-left: 1em;
+            }
+        }
+    }
+}

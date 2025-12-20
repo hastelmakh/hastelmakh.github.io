@@ -1,5 +1,5 @@
 body > header {
-    background: var(--color-white) url('../../../../Core/Resources/assets/images/bg-grid.svg') repeat;
+    background: var(--color-white) url('images/bg-grid.svg') repeat;
     padding: 1.5rem 0;
 
     a.back {
@@ -19,7 +19,7 @@ body > header {
             content: '';
             width: 1em;
             aspect-ratio: 1;
-            background-image: url('../../../../Core/Resources/assets/images/icon-arrow-left.svg');
+            background-image: url('images/icon-arrow-left.svg');
             display: inline-block;
             vertical-align: middle;
             margin-bottom: 0.16em;

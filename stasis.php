@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Credits\CreditsController;
 use App\Projects\ProjectsRouteProvider;
 use App\Core\AssetMapper\AssetMapperFactory;
 use App\Core\AssetMapper\AssetMapperInterface;
@@ -30,6 +31,7 @@ return new class implements ConfigInterface
         return [
             new Asset('/assets', __DIR__ . '/dist_assets/assets'),
             new Route('/', HomeController::class, 'home'),
+            new Route('/credits', CreditsController::class, 'credits'),
             new Group('/projects', ProjectsRouteProvider::class)
         ];
     }

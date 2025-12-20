@@ -1,0 +1,84 @@
+{% extends '@Core/_layout.html.twig' %}
+
+{% block title -%}Credits{%- endblock %}
+
+{% block meta_description -%}
+    Credits and acknowledgements, including references to the developer and design assets.
+{%- endblock %}
+
+{% block head %}
+    {{ parent() }}
+    {{ asset_import('@Credits/main.js') }}
+{% endblock %}
+
+{% block header %}
+    <div class="layout-content">
+        <a class="back" href="{{ path('home') }}">Back to Home</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="layout-content">
+            <h1>Credits</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="layout-content">
+            This portfolio was built with a help of talented individual and online resources.
+        </div>
+    </section>
+
+    {% set sections = [
+        {
+            'color': 'purple',
+            'title': 'Development',
+            'text': 'A huge thank you to <strong>Volodymyr Stelmakh</strong> for the exceptional engineering skills that powers this website. His expertise, problem-solving skills, and dedication have made everything run smoothly. It\'s been a pleasure working with such an experienced and detail-oriented developer!',
+            'links': [
+                {
+                    'href': 'https://github.com/vstelmakh',
+                    'text': 'GitHub',
+                    'label': 'GitHub profile of Volodymyr Stelmakh',
+                },
+                {
+                    'href': 'https://www.linkedin.com/in/vstelmakh/',
+                    'text': 'LinkedIn',
+                    'label': 'LinkedIn profile of Volodymyr Stelmakh',
+                },
+            ],
+        },
+        {
+            'color': 'pink',
+            'title': 'Assets',
+            'text': 'Some graphic elements and parts of illustrations used on this website were sourced from <strong>Freepik</strong>, a leading platform for high-quality free and premium images, illustrations, and design resources. Their extensive library allowed me to carefully select and adapt the visual elements that best fit the website\'s design.',
+            'links': [
+                {
+                    'href': 'https://www.freepik.com/',
+                    'text': 'Freepik',
+                    'label': 'Freepik home page',
+                },
+            ],
+        },
+    ] %}
+    {% for section in sections %}
+        <section>
+            <div class="layout-content">
+                <h2 class="{{ section.color }}">{{ section.title }}</h2>
+                <div class="description">
+                    <div class="text">{{ section.text | raw }}</div>
+
+                    {% if section.links is not empty %}
+                        <ul class="links">
+                            {% for link in section.links %}
+                            <li>
+                                <a class="shutter" href="{{ link.href }}" target="_blank" rel="nofollow noopener" aria-label="{{ link.label }}">{{ link.text }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
