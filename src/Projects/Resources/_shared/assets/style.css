@@ -5,6 +5,8 @@ body {
 }
 
 main > section {
+    --section-padding: clamp(1.5rem, calc(100vw / 18), 4rem);
+
     &:not(:first-child) {
         margin-top: 3.5rem;
     }
@@ -13,7 +15,7 @@ main > section {
     }
 
     .layout-content {
-        padding: clamp(1.5rem, calc(100vw / 18), 4rem);
+        padding: var(--section-padding);
         border-radius: 0.5rem;
         background-color: var(--color-white);
 
@@ -21,7 +23,7 @@ main > section {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 1rem clamp(1.5rem, calc(100vw / 18), 4rem);
+            gap: 1rem var(--section-padding);
 
             h2 {
                 margin: 0;

@@ -1,0 +1,16 @@
+main > section.smart {
+    .layout-content {
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        overflow: hidden;
+
+        > .headline {
+            padding: 0 var(--section-padding);
+
+            + * {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
