@@ -6,7 +6,8 @@ body {
 }
 
 img.screenshot {
-    border: 1px solid var(--color-medium-gray);
-    border-radius: 0.5rem;
     overflow: hidden;
+    outline: 1px solid var(--color-medium-gray);
+    outline-offset: -1px;
+    border-radius: 0.5rem;
 }
