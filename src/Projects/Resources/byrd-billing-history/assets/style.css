@@ -1,9 +1,3 @@
-@import url('cover.css');
-@import url('steps.css');
-@import url('problem.css');
-@import url('idea.css');
-@import url('smart.css');
-
 body {
     --color-project-teal: #4E9B8C;
 }

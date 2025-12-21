@@ -1,6 +1,11 @@
-import 'vite/modulepreload-polyfill'
+import 'vite/modulepreload-polyfill';
 
-import './style.css'
+import './reset.css';
+import './typography.css';
+import './colors.css';
+import './layout.css';
+import './footer.css';
+import './link_shutter.css';
 
 import lightbox from './lightbox/lightbox.js';
 const mediaQueryList = window.matchMedia('(max-width: 1199px)');
