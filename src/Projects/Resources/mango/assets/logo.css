@@ -1,0 +1,45 @@
+main > section.logo {
+    ul.variations {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            border-radius: .5rem;
+            padding: 2.75rem 0;
+
+            &.black {
+                background: var(--color-project-black);
+            }
+            &.white {
+                background: var(--color-soft-gray);
+                border: 1px solid var(--color-medium-gray);
+            }
+            &.yellow {
+                background: var(--color-project-yellow);
+            }
+        }
+    }
+
+    .pattern {
+        margin-top: 2.75rem;
+        width: 100%;
+        height: clamp(8.25rem, calc(100vw / 4), 20rem);
+        border: 1px solid var(--color-medium-gray);
+        border-radius: .5rem;
+        background-image: url('images/logo/symbol.svg');
+        background-repeat: repeat;
+        background-position: center;
+    }
+}

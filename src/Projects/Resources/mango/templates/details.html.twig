@@ -97,4 +97,42 @@
             </div>
         </div>
     </section>
+
+    <section class="logo">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>From Sketches</h2>
+
+                <div class="description">
+                    Starting with pen and paper, I explored countless ideas. After multiple iterations in Illustrator,
+                    the final design emerged: a simple, elegant solution using letterforms symbolically and harmoniously
+                    — a logo that feels as intuitive as the product itself.
+                </div>
+            </div>
+
+            <ul class="variations">
+                {% set items = [
+                    {
+                        'background': 'black',
+                        'image': 'logo-white.svg',
+                    },
+                    {
+                        'background': 'white',
+                        'image': 'logo-black.svg',
+                    },
+                    {
+                        'background': 'yellow',
+                        'image': 'logo-mono.svg',
+                    },
+                ] %}
+                {% for item in items %}
+                    <li class="{{ item.background }}">
+                        <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/logo/' ~ item.image) }}" alt="mango logo {{ item.background }}">
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pattern"></div>
+        </div>
+    </section>
 {% endblock %}
