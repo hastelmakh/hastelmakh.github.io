@@ -4,3 +4,9 @@ body {
     --color-project-green: #98C28F;
     --color-project-white: #FFFFFF;
 }
+
+img.screenshot {
+    border: 1px solid var(--color-medium-gray);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
