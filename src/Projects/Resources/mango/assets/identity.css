@@ -1,0 +1,12 @@
+main > section.identity {
+    .sketches {
+        display: flex;
+        flex-direction: column;
+        gap: 2.75rem;
+
+        .combination {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
