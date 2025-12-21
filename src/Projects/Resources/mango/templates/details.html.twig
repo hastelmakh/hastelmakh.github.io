@@ -2,10 +2,20 @@
 
 {% extends '@Projects~_shared/_project.html.twig' %}
 
+{% block head %}
+    {{ parent() }}
+    {{ asset_import('@Projects~' ~ project.slug ~ '/main.js') }}
+{% endblock %}
+
 {% block content_project %}
     <section class="title">
         <div class="layout-content">
             <h1>{{ project.name }}</h1>
+            <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/mango-logo.svg') }}" alt="mango logo">
         </div>
+    </section>
+
+    <section class="cover">
+        <div class="layout-content"></div>
     </section>
 {% endblock %}
