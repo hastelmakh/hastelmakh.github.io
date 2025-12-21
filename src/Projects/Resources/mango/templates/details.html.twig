@@ -135,4 +135,45 @@
             <div class="pattern"></div>
         </div>
     </section>
+
+    <section class="colors">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Bold and Warm Colors</h2>
+
+                <div class="description">
+                    The color palette had to feel powerful yet welcoming. I chose bold, warm, and neutral shades that
+                    balance energy with sophistication. They’re engaging enough to catch the eye, but soft enough to
+                    create a positive, trustful environment — the perfect backdrop for managing people and processes.
+                </div>
+            </div>
+
+            <ul class="list">
+                {% set items = [
+                    {
+                        'name': 'yellow',
+                        'hex': '#F5C05C',
+                    },
+                    {
+                        'name': 'green',
+                        'hex': '#98C28F',
+                    },
+                    {
+                        'name': 'black',
+                        'hex': '#111212',
+                    },
+                    {
+                        'name': 'white',
+                        'hex': '#FFFFFF',
+                    },
+                ] %}
+                {% for item in items %}
+                    <li class="{{ item.name }}">
+                        <div class="icon" aria-hidden="true"></div>
+                        <div class="hex">{{ item.hex }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}
