@@ -1,0 +1,67 @@
+main > section.focus {
+    ul.list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--color-project-black);
+            color: var(--color-white);
+            border-radius: .5rem;
+            padding: 1.5rem;
+
+            .head {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .icon {
+                    width: 2.5rem;
+                    min-width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 0.25rem;
+                    border: 1px solid var(--color-project-yellow);
+                    user-select: none;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    &.calendar {
+                        background-image: url('images/focus/calendar.svg');
+                    }
+                    &.chart {
+                        background-image: url('images/focus/chart.svg');
+                    }
+                    &.file {
+                        background-image: url('images/focus/file.svg');
+                    }
+                }
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 1.125rem;
+                font-weight: 700;
+                line-height: 1.5em;
+                color: var(--color-project-yellow);
+            }
+
+            .text {
+                margin: 0;
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

@@ -33,4 +33,47 @@
             </div>
         </div>
     </section>
+
+    <section class="focus">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Main Focus</h2>
+
+                <div class="description">
+                    My mission was clear: create a system that supports efficient management, smart data tracking, and
+                    digital employee information — all within one intuitive platform. Every feature had to work
+                    together seamlessly, helping teams move faster, smarter, and with confidence.
+                </div>
+            </div>
+
+            <ul class="list">
+                {% set items = [
+                    {
+                        'title': 'Efficient Management',
+                        'icon': 'calendar',
+                        'text': 'Set up a clear and easy process for requesting time off, keeping track of requests, and approving them quickly.',
+                    },
+                    {
+                        'title': 'Data Tracking',
+                        'icon': 'chart',
+                        'text': 'Provide real-time access to important metrics so that actions can be taken quickly.',
+                    },
+                    {
+                        'title': 'Digital Employee Info',
+                        'icon': 'file',
+                        'text': 'Store all employee info, like contacts and performance reviews, in one place.',
+                    },
+                ] %}
+                {% for item in items %}
+                    <li>
+                        <div class="head">
+                            <h3 class="title">{{ item.title }}</h3>
+                            <div class="icon {{ item.icon }}" aria-hidden="true"></div>
+                        </div>
+                        <p class="text">{{ item.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}
