@@ -5,3 +5,4 @@ import './identity.css';
 import './logo.css';
 import './colors.css';
 import './typography.css';
+import './employees.css';
