@@ -4,3 +4,4 @@ import './focus.css';
 import './identity.css';
 import './logo.css';
 import './colors.css';
+import './typography.css';
