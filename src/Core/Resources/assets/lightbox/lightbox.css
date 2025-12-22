@@ -17,6 +17,12 @@ dialog.lightbox {
         background: rgba(0, 0, 0, 0.8);
     }
 
+    .close-text {
+        text-align: right;
+        color: var(--color-white);
+        font-size: 0.75rem;
+    }
+
     .viewport {
         padding: 1rem;
         background: var(--color-white);

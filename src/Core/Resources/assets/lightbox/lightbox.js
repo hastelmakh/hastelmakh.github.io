@@ -38,15 +38,19 @@ const lightbox = {
      * @param element {HTMLElement}
      * */
     open: function (element) {
+        this.dialog = document.createElement('dialog');
+        this.dialog.className = 'lightbox';
+        document.body.appendChild(this.dialog);
+
+        const closeText = document.createElement('div');
+        closeText.textContent = 'Click anywhere to close';
+        closeText.className = 'close-text'
+        this.dialog.appendChild(closeText);
+
         const viewport = document.createElement('div');
         viewport.className = 'viewport';
         viewport.appendChild(element);
-
-        this.dialog = document.createElement('dialog');
-        this.dialog.className = 'lightbox';
         this.dialog.appendChild(viewport);
-
-        document.body.appendChild(this.dialog);
 
         scroll.disable();
         this.dialog.showModal();
