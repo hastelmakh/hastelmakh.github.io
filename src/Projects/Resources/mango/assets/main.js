@@ -4,6 +4,7 @@ import './focus.css';
 import './identity.css';
 import './login.css';
 import './logo.css';
+import './logo-animation.css';
 import './colors.css';
 import './typography.css';
 import './calendar-video.css';
