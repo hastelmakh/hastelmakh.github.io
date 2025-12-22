@@ -11,7 +11,7 @@ export default {
         image.src = src;
         image.alt = alt;
 
-        // display raster images twice smaller (for good quality on retina/hidpi displays)
+        // display images with scale (for good quality on retina/hidpi displays)
         if (image.complete && image.naturalWidth) {
             image.style.width = (image.naturalWidth * scale) + 'px';
             image.style.height = 'auto';

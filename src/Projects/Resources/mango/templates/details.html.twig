@@ -93,7 +93,7 @@
                 <div class="combination">
                     <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/identity/combination.svg') }}" alt="mango logo combination">
                 </div>
-                <img class="lightbox-on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/identity/sketches.svg') }}" alt="mango logo sketches">
+                <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/identity/sketches.svg') }}" alt="mango logo sketches">
             </div>
         </div>
     </section>
@@ -211,7 +211,7 @@
                 </div>
             </div>
 
-            <img class="screenshot lightbox-on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/dashboard/dashboard.png') }}" alt="mango dashboard screenshot">
+            <img class="screenshot" data-lightbox="on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/dashboard/dashboard.png') }}" alt="mango dashboard screenshot">
         </div>
     </section>
 
@@ -227,7 +227,7 @@
                 </div>
             </div>
 
-            <img class="screenshot lightbox-on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/calendar/calendar.png') }}" alt="mango calendar screenshot">
+            <img class="screenshot" data-lightbox="on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/calendar/calendar.png') }}" alt="mango calendar screenshot">
         </div>
     </section>
 
@@ -243,7 +243,7 @@
                 </div>
             </div>
 
-            <img class="screenshot lightbox-on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/employees/employees-list.png') }}" alt="mango employees list screenshot">
+            <img class="screenshot" data-lightbox="on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/employees/employees-list.png') }}" alt="mango employees list screenshot">
 
             <ul class="edit">
                 {% set items = [
@@ -266,7 +266,7 @@
                 ] %}
                 {% for item in items %}
                 <li>
-                    <img class="screenshot lightbox-on-small-vw" data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/employees/' ~ item.image) }}" alt="{{ item.alt }}">
+                    <img class="screenshot" data-lightbox data-lightbox-scale="0.5" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/employees/' ~ item.image) }}" alt="{{ item.alt }}">
                 </li>
                 {% endfor %}
             </ul>
@@ -286,7 +286,7 @@
             </div>
 
             <div class="fade">
-                <img class="lightbox-on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/components/components.svg') }}" alt="mango components subset">
+                <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/components/components.svg') }}" alt="mango components subset">
             </div>
         </div>
     </section>
