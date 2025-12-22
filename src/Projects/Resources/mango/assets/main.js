@@ -6,3 +6,4 @@ import './logo.css';
 import './colors.css';
 import './typography.css';
 import './employees.css';
+import './components.css';
