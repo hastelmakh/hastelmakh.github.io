@@ -5,6 +5,7 @@ import './identity.css';
 import './logo.css';
 import './colors.css';
 import './typography.css';
+import './calendar-video.css';
 import './employees.css';
 import './components.css';
 import './splash.css';

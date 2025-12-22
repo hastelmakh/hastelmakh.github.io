@@ -5,9 +5,11 @@ body {
     --color-project-white: #FFFFFF;
 }
 
-img.screenshot {
-    overflow: hidden;
-    outline: 1px solid var(--color-medium-gray);
-    outline-offset: -1px;
-    border-radius: 0.5rem;
+img,video {
+    &.screenshot {
+        overflow: hidden;
+        outline: 1px solid var(--color-medium-gray);
+        outline-offset: -1px;
+        border-radius: 0.5rem;
+    }
 }
