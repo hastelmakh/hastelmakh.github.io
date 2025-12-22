@@ -1,0 +1,11 @@
+main > section.login {
+    .layout-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    video {
+        width: 100%;
+        max-width: 850px;
+    }
+}
