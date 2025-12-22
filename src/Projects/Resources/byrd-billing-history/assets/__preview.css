@@ -1,4 +1,4 @@
-#section-projects .project[data-slug="byrd-billing-history"] {
+main > section.projects .project[data-slug="byrd-billing-history"] {
     .background {
         &.shape {
             background-image: url('images/preview/bg-shape.svg');

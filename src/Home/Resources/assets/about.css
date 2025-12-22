@@ -1,4 +1,4 @@
-#section-about {
+main > section.about {
     background-color: var(--color-black);
     color: var(--color-white);
 

@@ -1,4 +1,4 @@
-#section-hero {
+main > section.hero {
     background: url('../../../Core/Resources/assets/images/bg-grid.svg') repeat;
     position: relative;
     overflow-x: clip;
