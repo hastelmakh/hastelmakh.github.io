@@ -9,6 +9,7 @@
 {% block head %}
     {{ parent() }}
     {{ asset_import('@Projects~_shared/main.js') }}
+    {{ asset_import('@Projects~' ~ project.slug ~ '/main.js') }}
 {% endblock %}
 
 {% block header %}

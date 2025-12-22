@@ -2,11 +2,6 @@
 
 {% extends '@Projects~_shared/_project.html.twig' %}
 
-{% block head %}
-    {{ parent() }}
-    {{ asset_import('@Projects~' ~ project.slug ~ '/main.js') }}
-{% endblock %}
-
 {% block content_project %}
     <section class="title">
         <div class="layout-content">
