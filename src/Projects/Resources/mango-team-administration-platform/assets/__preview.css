@@ -1,4 +1,4 @@
-#section-projects .project[data-id='mango-team-administration-platform'] {
+#section-projects .project[data-slug='mango-team-administration-platform'] {
     .background {
         &.ellipse-empty {
             background-image: url('images/preview/bg-ellipse-empty.svg');

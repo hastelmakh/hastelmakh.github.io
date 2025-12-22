@@ -1,4 +1,4 @@
-#section-projects .project[data-id="byrd-design-system"] {
+#section-projects .project[data-slug="byrd-design-system"] {
     .background {
         &.ellipse {
             width: 25rem;
