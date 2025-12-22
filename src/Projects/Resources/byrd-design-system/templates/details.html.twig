@@ -29,4 +29,38 @@
             </div>
         </div>
     </section>
+
+    <section class="highlights">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Clean Design Library</h2>
+            </div>
+
+            <ul class="list">
+                {% set items = [
+                    {
+                        'image': 'icons.png',
+                        'alt': 'byrd icons example',
+                        'text': '152 Hand-crafted icons',
+                    },
+                    {
+                        'image': 'components.png',
+                        'alt': 'byrd components example',
+                        'text': '58 Components',
+                    },
+                    {
+                        'image': 'variants.png',
+                        'alt': 'byrd variants example',
+                        'text': '240 Variants',
+                    },
+                ] %}
+                {% for item in items %}
+                    <li>
+                        <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/highlights/' ~ item.image) }}" alt="{{ item.alt }}">
+                        <div class="text">{{ item.text }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}
