@@ -1,0 +1,12 @@
+main > section.spacing {
+    .view {
+        width: 100%;
+        height: clamp(15rem, calc(100vw / 2), 20rem);
+        background-image: url('images/spacing/spacing.svg');
+        background-position: center;
+        background-size: auto;
+        outline: 1px solid var(--color-medium-gray);
+        outline-offset: -1px;
+        border-radius: 0.5rem;
+    }
+}
