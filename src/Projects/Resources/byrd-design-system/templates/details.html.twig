@@ -63,4 +63,144 @@
             </ul>
         </div>
     </section>
+
+    <section class="colors">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>The Power of Color</h2>
+
+                <div class="description">
+                    We needed a color palette that was not only visually appealing but also functional across all
+                    products and branding materials. The challenge? Balancing boldness with warmth while maintaining a
+                    professional look. After carefully selecting the shades, we created a vibrant yet balanced palette
+                    that makes the user experience feel both dynamic and welcoming.
+                </div>
+            </div>
+
+            <ol class="accordion">
+                <li class="primary">
+                    <div class="text white">Brand / Primary</div>
+                </li>
+                <li class="secondary">
+                    <div class="text white">Brand / Secondary</div>
+                </li>
+                <li class="tertiary">
+                    <div class="text balck">Brand / Tertiary</div>
+                </li>
+            </ol>
+            
+            <ul class="list">
+                {% set colors = [
+                    {
+                        'name': 'Brand / Primary',
+                        'hex': '#293141',
+                        'textColor': 'white',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#10141A', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#212734', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#545A67', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#D4D6D9', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Brand / Secondary',
+                        'hex': '#62C2AF',
+                        'textColor': 'white',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#274E46', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#4E9B8C', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#81CEBF', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#E0F3EF', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Functional / Info',
+                        'hex': '#3F8BBD',
+                        'textColor': 'white',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#19384C', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#326F97', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#65A2CA', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#D9E8F2', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Functional / Warning',
+                        'hex': '#F5A623',
+                        'textColor': 'black',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#62420E', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#C4851C', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#F7B84F', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#FDEDD3', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Functional / Danger',
+                        'hex': '#FD5C63',
+                        'textColor': 'white',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#652528', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#CA4A4F', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#FD7D82', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#FFDEE0', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Functional / Success',
+                        'hex': '#12B76A',
+                        'textColor': 'white',
+                        'isFullWidth': false,
+                        'shades': [
+                            {'name': '800', 'hex': '#07492A', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#0E9255', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#41C588', 'textColor': 'white'},
+                            {'name': '100', 'hex': '#D0F1E1', 'textColor': 'black'},
+                        ]
+                    },
+                    {
+                        'name': 'Neutral',
+                        'hex': '#989898',
+                        'textColor': 'white',
+                        'isFullWidth': true,
+                        'shades': [
+                            {'name': '900', 'hex': '#191919', 'textColor': 'white'},
+                            {'name': '800', 'hex': '#323232', 'textColor': 'white'},
+                            {'name': '700', 'hex': '#4C4C4C', 'textColor': 'white'},
+                            {'name': '600', 'hex': '#656565', 'textColor': 'white'},
+                            {'name': '500', 'hex': '#7F7F7F', 'textColor': 'white'},
+                            {'name': '400', 'hex': '#989898', 'textColor': 'white'},
+                            {'name': '300', 'hex': '#B2B2B2', 'textColor': 'white'},
+                            {'name': '200', 'hex': '#CBCBCB', 'textColor': 'black'},
+                            {'name': '100', 'hex': '#E5E5E5', 'textColor': 'black'},
+                            {'name': '50', 'hex': '#F2F2F2', 'textColor': 'black'},
+                        ]
+                    }
+                ] %}
+
+                {% for color in colors %}
+                    <li class="color{{ color.isFullWidth ? ' full-width' : '' }}">
+                        <div class="card">
+                            <div class="main text-{{ color.textColor }}" style="background-color: {{ color.hex }}">
+                                <span class="name">{{ color.name }}</span>
+                                <span class="hex">{{ color.hex }}</span>
+                            </div>
+                            <ol class="shades">
+                                {% for shade in color.shades %}
+                                    <li class="shade" style="background-color: {{ shade.hex }}">
+                                        <span class="name text-{{ shade.textColor }}">{{ shade.name }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}

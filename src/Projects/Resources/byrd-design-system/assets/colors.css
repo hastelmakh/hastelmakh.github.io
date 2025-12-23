@@ -1,0 +1,184 @@
+main > section.colors {
+    .accordion {
+        list-style:none;
+        display: flex;
+        flex-wrap: nowrap;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        li {
+            width: 100%;
+            height: 10.5rem;
+            padding: clamp(0.5rem, calc(100vw / 30), 1.5rem);
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            position: relative;
+
+            --duration: 9s;
+            --delay-first: 0s;
+            --delay-second: 3s;
+            --delay-third: 6s;
+            min-width: clamp(1.5rem, calc(100vw / 30), 6rem);
+            flex: 0;
+            animation: color-accordion var(--duration) infinite ease-in-out;
+
+            .text {
+                position: absolute;
+                font-size: 0.875rem;
+
+                &.black {
+                    color: var(--color-project-black);
+                }
+                &.white {
+                    color: var(--color-white);
+                }
+
+                animation: color-accordion-text var(--duration) infinite ease-in-out;
+                text-wrap: nowrap;
+                opacity: 0;
+                visibility: hidden;
+                width: 0;
+                overflow: hidden;
+            }
+
+            &.primary {
+                background-color: #293141;
+                animation-delay: var(--delay-first);
+
+                .text {
+                    animation-delay: var(--delay-first);
+                }
+            }
+
+            &.secondary {
+                background-color: #62C2AF;
+                animation-delay: var(--delay-second);
+
+                .text {
+                    animation-delay: var(--delay-second);
+                }
+            }
+
+            &.tertiary {
+                background-color: #F5F6F7;
+                animation-delay: var(--delay-third);
+
+                .text {
+                    animation-delay: var(--delay-third);
+                }
+            }
+        }
+    }
+
+    ul.list {
+        --gap: clamp(1rem, calc(100vw / 25), 2.75rem);
+
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+        margin-top: var(--gap);
+
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+        }
+
+        li.color {
+            &.full-width {
+                grid-column: span 2;
+
+                @media (max-width: 800px) {
+                    grid-column: span 1;
+                }
+            }
+
+            .text-white {
+                color: var(--color-white);
+            }
+
+            .text-black {
+                color: var(--color-black);
+            }
+
+            .card {
+                padding: clamp(.5rem, calc(100vw / 35), 1.5rem);
+                border: 1px solid var(--color-project-gray);
+                border-radius: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                .main {
+                    border-radius: 0.5rem;
+                    padding: 0.875rem 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+
+                    .hex {
+                        font-weight: 400;
+                    }
+                }
+
+                .shades {
+                    list-style: none;
+                    display: flex;
+                    gap: 1rem;
+
+                    @media (max-width: 800px) {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 0.5rem;
+                    }
+
+                    .shade {
+                        flex: 1;
+                        border-radius: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.875rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes color-accordion {
+    0% {
+        flex: 0;
+    }
+
+    11.11%, 33.33% {
+        flex: 1;
+    }
+
+    44.44%, 100% {
+        flex: 0;
+    }
+}
+
+@keyframes color-accordion-text {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+
+    12%, 33.33% {
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+    }
+
+    40%, 100% {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+}
