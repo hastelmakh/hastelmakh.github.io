@@ -277,4 +277,113 @@
             </div>
         </div>
     </section>
+
+    <section class="inclusive">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Inclusive Design</h2>
+
+                <div class="description">
+                    Designing for accessibility is often overlooked, but we wanted to make sure Byrd’s products were
+                    usable by everyone. The challenge was ensuring all users, including those with disabilities or
+                    limited mobility, could interact efficiently with the interface. We tackled this by making
+                    accessibility a priority, creating features like keyboard navigation, color contrasts, and
+                    alternative text for images to make the system as inclusive as possible.
+                </div>
+            </div>
+
+            <ul class="traits">
+                {% set items = [
+                    {
+                        'title': 'See',
+                        'list': [
+                            {'name': 'Permanent', 'icon': 'blind', 'text': 'Blind'},
+                            {'name': 'Temporary', 'icon': 'wearing-glasses', 'text': 'Wears glasses'},
+                            {'name': 'Situational', 'icon': 'distracted', 'text': 'Distracted'},
+                        ],
+                    },
+                    {
+                        'title': 'Touch',
+                        'list': [
+                            {'name': 'Permanent', 'icon': 'one-arm', 'text': 'One arm'},
+                            {'name': 'Temporary', 'icon': 'arm-injury', 'text': 'Arm injury'},
+                            {'name': 'Situational', 'icon': 'holding-box', 'text': 'Holding box'},
+                        ],
+                    },
+                    {
+                        'title': 'Hear',
+                        'list': [
+                            {'name': 'Permanent', 'icon': 'deaf', 'text': 'Deaf'},
+                            {'name': 'Temporary', 'icon': 'infection', 'text': 'Ear infection'},
+                            {'name': 'Situational', 'icon': 'loud-environment', 'text': 'Loud around'},
+                        ],
+                    },
+                    {
+                        'title': 'Speak',
+                        'list': [
+                            {'name': 'Permanent', 'icon': 'non-verbal', 'text': 'Non-verbal'},
+                            {'name': 'Temporary', 'icon': 'no-voice', 'text': 'Laryngitis'},
+                            {'name': 'Situational', 'icon': 'language', 'text': 'Heavy accent'},
+                        ],
+                    },
+                ] %}
+                {% for item in items %}
+                    <li>
+                        <h3 class="head">{{ item.title }}</h3>
+                        <ul class="list">
+                            {% for trait in item.list %}
+                                <li>
+                                    <div class="name">{{ trait.name }}</div>
+                                    <div class="icon {{ trait.icon }}"></div>
+                                    <div class="text">{{ trait.text }}</div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="focus">
+                <ul class="example">
+                    {% set items = [
+                        {'label': 'Primary', 'background': '#293141', 'color': 'white'},
+                        {'label': 'Secondary', 'background': '#62C2AF', 'color': 'black'},
+                        {'label': 'Neutral', 'background': '#F2F2F2', 'color': 'black'},
+                        {'label': 'White', 'background': '#FFFFFF', 'color': 'black'},
+                    ] %}
+                    {% for item in items %}
+                        <li style="background-color: {{ item.background }};">
+                            <div class="image">
+                                <img src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/inclusive/button-focus.svg') }}" alt="byrd button focus example">
+                            </div>
+                            <div class="label {{ item.color }}">{{ item.label }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="description">
+                    <h3>Focus State</h3>
+
+                    <div class="text">
+                        <p>
+                            To make our focus state more visible and accessible, we used a combination of primary and white
+                            colors for the border. This contrast helps the focus indicator stand out clearly on both light
+                            and dark backgrounds. It improves visibility for all users, especially those using keyboard
+                            navigation.
+                        </p>
+                        <p>
+                            Using both a light (white) and a dark (primary) color ensures the focus style has enough
+                            contrast, no matter the background. This technique supports better accessibility and visual
+                            clarity. It's a simple but thoughtful way to make the interface more inclusive and easier to use
+                            for everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/inclusive/buttons.svg') }}" alt="byrd design system buttons">
+            </div>
+        </div>
+    </section>
 {% endblock %}

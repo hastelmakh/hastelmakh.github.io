@@ -1,0 +1,193 @@
+main > section.inclusive {
+    ul.traits {
+        --gap: clamp(1rem, calc(100vw / 40), 2.75rem);
+
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr;
+        }
+
+        > li {
+            padding: clamp(0.5rem, calc(100vw / 80), 1.5rem);
+            background-color: var(--color-project-light-gray);
+            border: 1px solid var(--color-project-gray);
+            border-radius: .5rem;
+
+            .head {
+                margin: 0;
+                padding: 0.75rem;
+                text-align: center;
+                font-size: 1.125rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                background-color: var(--color-project-gray);
+                border-radius: .5rem;
+            }
+        }
+
+        ul.list {
+            margin-top: 1rem;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+
+            @media (max-width: 550px) {
+                grid-template-columns: 1fr;
+            }
+
+            > li {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                background-color: var(--color-white);
+                padding: 1rem;
+                border: 1px solid var(--color-project-gray);
+                border-radius: .5rem;
+                text-align: center;
+
+                .name {
+                    color: var(--color-project-teal);
+                    font-weight: 700;
+                    @media (min-width: 1001px) {
+                        font-size: clamp(0.875rem, calc(100vw / 70), 1rem);
+                    }
+                }
+
+                .text {
+                    font-size: 0.875rem;
+                }
+
+                .icon {
+                    height: 5.625rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+
+                    &.blind {
+                        background-image: url('images/inclusive/blind.svg');
+                    }
+                    &.wearing-glasses {
+                        background-image: url('images/inclusive/wearing-glasses.svg');
+                    }
+                    &.distracted {
+                        background-image: url('images/inclusive/distracted.svg');
+                    }
+                    &.one-arm {
+                        background-image: url('images/inclusive/one-arm.svg');
+                    }
+                    &.arm-injury {
+                        background-image: url('images/inclusive/arm-injury.svg');
+                    }
+                    &.holding-box {
+                        background-image: url('images/inclusive/holding-box.svg');
+                    }
+                    &.deaf {
+                        background-image: url('images/inclusive/deaf.svg');
+                    }
+                    &.infection {
+                        background-image: url('images/inclusive/infection.svg');
+                    }
+                    &.loud-environment {
+                        background-image: url('images/inclusive/loud-environment.svg');
+                    }
+                    &.non-verbal {
+                        background-image: url('images/inclusive/non-verbal.svg');
+                    }
+                    &.no-voice {
+                        background-image: url('images/inclusive/no-voice.svg');
+                    }
+                    &.language {
+                        background-image: url('images/inclusive/language.svg');
+                    }
+                }
+            }
+        }
+    }
+
+    .focus {
+        background-color: var(--color-project-light-gray);
+        border: 1px solid var(--color-project-gray);
+        border-radius: .5rem;
+        padding: clamp(0.5rem, calc(100vw / 80), 1.5rem);
+
+        ul.example {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-project-gray);
+            border-radius: .5rem;
+            padding: clamp(0.5rem, calc(100vw / 80), 1.5rem);
+
+            @media (max-width: 1000px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 550px) {
+                grid-template-columns: 1fr;
+            }
+
+            > li {
+                border: 1px solid var(--color-project-gray);
+                border-radius: .5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2.5rem 1rem 0.5rem 1rem;
+
+                .image {
+                    margin: auto;
+                }
+
+                .label {
+                    font-size: 0.875rem;
+                    text-align: right;
+                    white-space: nowrap;
+
+                    &.black {
+                        color: var(--color-black);
+                    }
+                    &.white {
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+
+        .description {
+            margin-top: 1.5rem;
+
+            h3 {
+                margin: 0;
+                font-size: 1rem;
+                font-weight: 700;
+                color: var(--color-project-teal);
+            }
+
+            .text {
+                column-count: 2;
+                column-gap: 1rem;
+
+                @media (max-width: 1000px) {
+                    column-count: 1;
+                }
+
+                p {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        padding: clamp(0.5rem, calc(100vw / 35), 1.5rem);
+        border: 1px solid var(--color-project-gray);
+        border-radius: 0.5rem;
+    }
+}
