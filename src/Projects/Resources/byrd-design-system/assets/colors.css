@@ -78,7 +78,6 @@ main > section.colors {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--gap);
-        margin-top: var(--gap);
 
         @media (max-width: 800px) {
             grid-template-columns: 1fr;

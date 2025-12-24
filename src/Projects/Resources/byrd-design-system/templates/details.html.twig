@@ -221,6 +221,43 @@
         </div>
     </section>
 
+    <section class="icons">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Crafting Icons</h2>
+
+                <div class="description">
+                    Icons needed to be more than just symbols — they had to carry meaning and match the visual identity
+                    of the brand. The obstacle was creating a set of icons that were both geometric and easily
+                    recognizable. By handcrafting each icon within a 24x24 px grid and adhering to a 4 px safe area, we
+                    created a harmonious, functional set that helps users quickly understand functions and features.
+                </div>
+            </div>
+
+            <ul class="list-large">
+                {% set items = [
+                    {'icon': 'envelope'},
+                    {'icon': 'allocation-b2b'},
+                    {'icon': 'arrow-circle-down'},
+                    {'icon': 'arrow-to-bottom'},
+                    {'icon': 'bundle'},
+                    {'icon': 'branding-sticker'},
+                    {'icon': 'calculate'},
+                    {'icon': 'charging-euro'},
+                    {'icon': 'claim'},
+                    {'icon': 'close-circle'},
+                ] %}
+                {% for item in items %}
+                    <li class="{{ item.icon }}"></li>
+                {% endfor %}
+            </ul>
+
+            <div class="list-small">
+                <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/icons/icons.svg') }}" alt="byrd design system icons">
+            </div>
+        </div>
+    </section>
+
     <section class="components">
         <div class="layout-content">
             <div class="headline">

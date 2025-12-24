@@ -19,6 +19,10 @@ main > section {
         border-radius: 0.5rem;
         background-color: var(--color-white);
 
+        > :not(:first-child) {
+            margin-top: clamp(1rem, calc(100vw / 25), 2.75rem);
+        }
+
         > .headline {
             display: flex;
             justify-content: space-between;
@@ -31,10 +35,6 @@ main > section {
 
             .description {
                 max-width: calc(var(--layout-width) / 2.4);
-            }
-
-            + * {
-                margin-top: clamp(1rem, calc(100vw / 25), 2.75rem);
             }
         }
     }
