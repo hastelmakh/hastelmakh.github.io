@@ -1,0 +1,63 @@
+description: 'Setup PHP and Composer dependencies with cache'
+inputs:
+  version:
+    description: 'PHP version to setup'
+    required: true
+  extensions:
+    description: 'PHP extensions to setup (comma + space separated)'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Prepare vars'
+      id: vars
+      shell: bash
+      run: |
+        {
+          echo "composer_cache_paths<<EOF"
+            echo "$(composer config cache-files-dir)"
+            echo "composer.lock"
+          echo "EOF"
+        } >> "$GITHUB_OUTPUT"
+        
+        CURRENT_DATE=$(date +'%Y%m%d')
+        echo "composer_cache_key=composer-php${{ inputs.version }}-${CURRENT_DATE}-${{ hashFiles('composer.json') }}" >> $GITHUB_OUTPUT
+        
+        {
+          echo "composer_cache_restore_keys<<EOF"
+            echo "composer-php${{ inputs.version }}-${CURRENT_DATE}"
+            echo "composer-php${{ inputs.version }}"
+            echo "composer-"
+          echo "EOF"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: 'Setup PHP'
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ inputs.version }}
+        extensions: ${{ inputs.extensions }}
+        coverage: xdebug
+
+    - name: 'Validate composer.json and composer.lock'
+      shell: bash
+      run: composer validate
+
+    - name: 'Restore Composer cache'
+      id: composer_cache
+      uses: actions/cache/restore@v5
+      with:
+        path: ${{ steps.vars.outputs.composer_cache_paths }}
+        key: ${{ steps.vars.outputs.composer_cache_key }}
+        restore-keys: ${{ steps.vars.outputs.composer_cache_restore_keys }}
+
+    - name: 'Install Composer dependencies'
+      shell: bash
+      run: composer install --prefer-dist --no-progress --no-interaction
+
+    - name: 'Persist Composer cache'
+      if: steps.composer_cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v5
+      with:
+        path: ${{ steps.vars.outputs.composer_cache_paths }}
+        key: ${{ steps.vars.outputs.composer_cache_key }}

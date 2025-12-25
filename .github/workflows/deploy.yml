@@ -1,0 +1,50 @@
+name: 'Build and Deploy'
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    name: 'Build website'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Git checkout'
+        uses: actions/checkout@v5
+
+      - name: 'Setup Node and Yarn dependencies'
+        uses: ./.github/actions/setup-node
+        with:
+          version: '25'
+
+      - name: 'Setup PHP and Composer dependencies'
+        uses: ./.github/actions/setup-php
+        with:
+          version: '8.5'
+          extensions: ''
+
+      - name: 'Vite build'
+        run: yarn vite build
+
+      - name: 'Stasis generate'
+        run: vendor/bin/stasis generate
+
+      - name: 'Upload Pages artifact'
+        id: artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: 'ubuntu-latest'
+    permissions:
+      pages: write    # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+    environment:
+      name: 'github-pages'
+      url: ${{ steps.artifact.outputs.page_url }}
+    steps:
+      - name: 'Deploy to GitHub Pages'
+        uses: actions/deploy-pages@v4
