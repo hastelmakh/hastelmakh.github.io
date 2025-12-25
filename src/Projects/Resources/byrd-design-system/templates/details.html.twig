@@ -272,9 +272,7 @@
                 </div>
             </div>
 
-            <div class="fade">
-                <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/components/components.svg') }}" alt="byrd design system components subset">
-            </div>
+            <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/components/components.svg') }}" alt="byrd design system components subset">
         </div>
     </section>
 
@@ -384,6 +382,24 @@
             <div class="buttons">
                 <img data-lightbox="on-small-vw" data-lightbox-scale="1" src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/inclusive/buttons.svg') }}" alt="byrd design system buttons">
             </div>
+        </div>
+    </section>
+
+    <section class="interaction">
+        <div class="layout-content">
+            <div class="headline">
+                <h2>Dynamic Interaction</h2>
+
+                <div class="description">
+                    We wanted the user experience to feel engaging and fluid, so motion design became a key element.
+                    The challenge was adding subtle animations that didn’t overwhelm the user but still captured their
+                    attention when interacting with key elements like buttons or progress bars. By experimenting with
+                    motion effects, we managed to enhance the interactivity of the interface, guiding users through the
+                    app in a natural, intuitive way.
+                </div>
+            </div>
+
+            <video src="{{ asset_path('@Projects~' ~ project.slug ~ '/images/interaction/login.mp4') }}" autoplay muted loop playsinline aria-label="byrd login interaction animation"></video>
         </div>
     </section>
 {% endblock %}

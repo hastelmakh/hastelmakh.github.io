@@ -1,0 +1,9 @@
+main > section.interaction {
+    video {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+}
