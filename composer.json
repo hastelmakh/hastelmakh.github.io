@@ -1,5 +1,6 @@
 {
     "name": "hastelmakh/hastelmakh",
+    "description": "Personal website of Hanna Stelmakh",
     "type": "project",
     "license": "proprietary",
     "autoload": {
