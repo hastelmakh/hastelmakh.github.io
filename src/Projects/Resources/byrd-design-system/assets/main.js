@@ -6,3 +6,4 @@ import './spacing.css';
 import './icons.css';
 import './inclusive.css';
 import './interaction.css';
+import './splash.css';
