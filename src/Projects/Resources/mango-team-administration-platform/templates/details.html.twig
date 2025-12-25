@@ -2,6 +2,8 @@
 
 {% extends '@Projects~_shared/_project.html.twig' %}
 
+{% block og_image -%}{{ asset_path('@Projects~' ~ project.slug ~ '/images/cover.png') }}{%- endblock %}
+
 {% block content_project %}
     <section class="title">
         <div class="layout-content">

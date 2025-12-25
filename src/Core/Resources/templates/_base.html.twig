@@ -3,15 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% set title = block('title') ?? '' -%}
-        <title>{% if title is not empty %}{{ title | striptags | raw  }} - Hanna Stelmakh{% else %}Hanna Stelmakh - UI/UX Designer{% endif %}</title>
-        {% set meta_description = block('meta_description') ?? '' -%}
-        {% if meta_description is not empty %}<meta name="description" content="{{ meta_description | striptags | raw }}">{% endif %}
+        {% set site_name = 'Hanna Stelmakh - UI/UX Designer' -%}
+        {% set title = (block('title') ?? '') -%}
+        {% set title = title is not empty ? title ~ ' - Hanna Stelmakh' : site_name -%}
+        <title>{{ title }}</title>
+        {% set meta_description = (block('meta_description') ?? '') -%}
+        {% if meta_description is not empty %}<meta name="description" content="{{ meta_description | escape('html_attr') }}">{% endif %}
 
-        <link rel="icon" type="image/png" href="{{ asset_path('@Core/favicon/favicon-96x96.png') }}" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="{{ asset_path('@Core/favicon/favicon.svg') }}" />
-        <link rel="shortcut icon" href="{{ asset_path('@Core/favicon/favicon.ico') }}" />
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_path('@Core/favicon/apple-touch-icon.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset_path('@Core/favicon/favicon-96x96.png') }}" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="{{ asset_path('@Core/favicon/favicon.svg') }}">
+        <link rel="shortcut icon" href="{{ asset_path('@Core/favicon/favicon.ico') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_path('@Core/favicon/apple-touch-icon.png') }}">
+
+        {% set og_image = (block('og_image') ?? asset_path('@Core/images/social.png')) -%}
+        <meta property="og:image" content="https://hastelmakh.github.io{{ og_image | escape('html_attr') }}">
+        <meta property="og:site_name" content="{{ site_name | escape('html_attr') }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ title | escape('html_attr') }}">
+        <meta property="og:description" content="{{ meta_description | escape('html_attr') }}">
 
         {{ asset_import('@Core/main.js') }}
         {% block head %}{% endblock %}
