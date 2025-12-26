@@ -15,6 +15,9 @@
         "symfony/filesystem": "^7.3",
         "twig/twig": "^3.21"
     },
+    "require-dev": {
+        "ext-pcntl": "*"
+    },
     "config": {
         "sort-packages": true
     }
