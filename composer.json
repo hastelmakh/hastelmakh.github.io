@@ -11,7 +11,7 @@
     "require": {
         "php": "~8.5",
         "php-di/php-di": "^7.1",
-        "stasis/stasis": "dev-main",
+        "stasis/stasis": "^0.1",
         "symfony/filesystem": "^7.3",
         "twig/twig": "^3.21"
     },

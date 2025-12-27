@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb6e409ae00a0325664a046e88e2f42e",
+    "content-hash": "b0709b2efb836c5c232d6c1d6f415d93",
     "packages": [
         {
             "name": "laravel/serializable-closure",
@@ -250,7 +250,7 @@
         },
         {
             "name": "stasis/stasis",
-            "version": "dev-main",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stasis-php/stasis.git",
@@ -274,7 +274,6 @@
                 "phpunit/phpunit": "^12.3",
                 "symfony/process": "^7.3"
             },
-            "default-branch": true,
             "bin": [
                 "bin/stasis"
             ],
@@ -298,7 +297,7 @@
             "homepage": "https://github.com/stasis-php/stasis",
             "support": {
                 "issues": "https://github.com/stasis-php/stasis/issues",
-                "source": "https://github.com/stasis-php/stasis/tree/main"
+                "source": "https://github.com/stasis-php/stasis/tree/0.1.0"
             },
             "time": "2025-11-16T15:18:29+00:00"
         },
@@ -1132,9 +1131,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "stasis/stasis": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
