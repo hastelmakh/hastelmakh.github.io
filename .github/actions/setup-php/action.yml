@@ -17,17 +17,15 @@ runs:
         {
           echo "composer_cache_paths<<EOF"
             echo "$(composer config cache-files-dir)"
-            echo "composer.lock"
           echo "EOF"
         } >> "$GITHUB_OUTPUT"
         
-        CURRENT_DATE=$(date +'%Y%m%d')
-        echo "composer_cache_key=composer-php${{ inputs.version }}-${CURRENT_DATE}-${{ hashFiles('composer.json') }}" >> $GITHUB_OUTPUT
+        COMPOSER_LOCK_HASH="${{ hashFiles('composer.lock') }}"
+        echo "composer_cache_key=composer-${COMPOSER_LOCK_HASH}" >> $GITHUB_OUTPUT
         
         {
           echo "composer_cache_restore_keys<<EOF"
-            echo "composer-php${{ inputs.version }}-${CURRENT_DATE}"
-            echo "composer-php${{ inputs.version }}"
+            echo "composer-${COMPOSER_LOCK_HASH}"
             echo "composer-"
           echo "EOF"
         } >> "$GITHUB_OUTPUT"
