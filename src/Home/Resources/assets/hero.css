@@ -217,6 +217,11 @@ main > section.hero {
             left: -11rem;
             bottom: 5rem;
             text-wrap: nowrap;
+
+            &::before {
+                --gap-multiplier: 0.9;
+            }
+
             @media (max-width: 1000px) {
                 left: unset;
                 bottom: unset;

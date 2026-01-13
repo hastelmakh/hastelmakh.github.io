@@ -25,6 +25,7 @@
     &::before {
         content: '';
         --size: 33px;
+        --gap-multiplier: 1;
         width: var(--size);
         height: var(--size);
         position: absolute;
@@ -32,29 +33,29 @@
         background-image: url('images/deco-arrow.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        top: calc(var(--size) * -1);
-        right: calc(var(--size) * -1);
+        top: calc(var(--size) * -1 * var(--gap-multiplier));
+        right: calc(var(--size) * -1 * var(--gap-multiplier));
         transform: rotate(45deg);
     }
 
     &.top-left::before {
-        top: calc(var(--size) * -1);
-        left: calc(var(--size) * -1);
+        top: calc(var(--size) * -1 * var(--gap-multiplier));
+        left: calc(var(--size) * -1 * var(--gap-multiplier));
         transform: rotate(-45deg);
     }
     &.top-right::before {
-        top: calc(var(--size) * -1);
-        right: calc(var(--size) * -1);
+        top: calc(var(--size) * -1 * var(--gap-multiplier));
+        right: calc(var(--size) * -1 * var(--gap-multiplier));
         transform: rotate(45deg);
     }
     &.bottom-left::before {
-        bottom: calc(var(--size) * -1);
-        left: calc(var(--size) * -1);
+        bottom: calc(var(--size) * -1 * var(--gap-multiplier));
+        left: calc(var(--size) * -1 * var(--gap-multiplier));
         transform: rotate(-135deg);
     }
     &.bottom-right::before {
-        bottom: calc(var(--size) * -1);
-        right: calc(var(--size) * -1);
+        bottom: calc(var(--size) * -1 * var(--gap-multiplier));
+        right: calc(var(--size) * -1 * var(--gap-multiplier));
         transform: rotate(135deg);
     }
 }
