@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a87163b8d186ee2749651c28751e5243",
+    "content-hash": "1911951a6f67db415198f0931528598e",
     "packages": [
         {
             "name": "laravel/serializable-closure",
@@ -297,6 +297,55 @@
                 "source": "https://github.com/stasis-php/ext-twig/tree/0.1.0"
             },
             "time": "2026-03-22T23:11:10+00:00"
+        },
+        {
+            "name": "stasis/ext-vite",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stasis-php/ext-vite.git",
+                "reference": "ff0266b2e426427a8c40d825a5ad9094c4ff8d04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stasis-php/ext-vite/zipball/ff0266b2e426427a8c40d825a5ad9094c4ff8d04",
+                "reference": "ff0266b2e426427a8c40d825a5ad9094c4ff8d04",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.4",
+                "stasis/stasis": "0.2.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v3.93",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^13",
+                "twig/twig": "^3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stasis\\Extension\\Vite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Volodymyr Stelmakh",
+                    "homepage": "https://github.com/vstelmakh"
+                }
+            ],
+            "description": "Vite extension for Stasis",
+            "homepage": "https://github.com/stasis-php/ext-vite",
+            "support": {
+                "issues": "https://github.com/stasis-php/ext-vite/issues",
+                "source": "https://github.com/stasis-php/ext-vite/tree/0.1.0"
+            },
+            "time": "2026-03-23T22:26:27+00:00"
         },
         {
             "name": "stasis/stasis",
