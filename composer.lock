@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb3d748484756e33dafa041b3d830b48",
+    "content-hash": "a87163b8d186ee2749651c28751e5243",
     "packages": [
         {
             "name": "laravel/serializable-closure",
@@ -247,6 +247,56 @@
                 "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
             "time": "2021-11-05T16:47:00+00:00"
+        },
+        {
+            "name": "stasis/ext-twig",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stasis-php/ext-twig.git",
+                "reference": "be3f99911d19ac05165dc6d967a3952c87fff50a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stasis-php/ext-twig/zipball/be3f99911d19ac05165dc6d967a3952c87fff50a",
+                "reference": "be3f99911d19ac05165dc6d967a3952c87fff50a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.4",
+                "stasis/stasis": "^0.2.0",
+                "twig/twig": "^3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.93",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^13",
+                "symfony/process": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stasis\\Extension\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Volodymyr Stelmakh",
+                    "homepage": "https://github.com/vstelmakh"
+                }
+            ],
+            "description": "Twig extension for Stasis",
+            "homepage": "https://github.com/stasis-php/ext-twig",
+            "support": {
+                "issues": "https://github.com/stasis-php/ext-twig/issues",
+                "source": "https://github.com/stasis-php/ext-twig/tree/0.1.0"
+            },
+            "time": "2026-03-22T23:11:10+00:00"
         },
         {
             "name": "stasis/stasis",
