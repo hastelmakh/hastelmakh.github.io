@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace App\Core\AssetMapper\Mapper;
 
 use App\Core\ModuleProvider\ModuleProvider;
+use Stasis\Extension\Vite\Reference\ReferenceParserInterface;
 
-class ReferenceParser
+class ReferenceParser implements ReferenceParserInterface
 {
     public function __construct(
         private ModuleProvider $moduleProvider,
     ) {}
 
+    #[\Override]
     public function getPath(string $reference): string
     {
         preg_match('/^@([^\/~]+)(?:~([^\/]+))?\/(.+)/u', $reference, $matches);
