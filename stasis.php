@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
+use App\Core\ModuleProvider\ModuleProvider;
 use App\Credits\CreditsController;
 use App\Projects\ProjectsRouteProvider;
 use App\Core\AssetMapper\AssetMapperFactory;
 use App\Core\AssetMapper\AssetMapperInterface;
-use App\Core\Router\RouterContainer;
-use App\Core\Router\RouterStasisExtension;
 use App\Core\TwigFactory;
 use App\Home\HomeController;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Stasis\Config\ConfigInterface;
+use Stasis\Extension\Twig\StasisTwigExtension;
 use Stasis\Generator\Distribution\DistributionInterface;
 use Stasis\Generator\Distribution\FilesystemDistribution;
 use Stasis\Router\Route\Asset;
@@ -22,9 +22,11 @@ use Twig\Environment;
 
 return new class implements ConfigInterface
 {
-    public function __construct(
-        private RouterContainer $router = new RouterContainer(),
-    ) {}
+    private readonly Environment $twig;
+
+    public function __construct() {
+        $this->twig = new TwigFactory(new ModuleProvider())->create();
+    }
 
     public function routes(): iterable
     {
@@ -42,8 +44,7 @@ return new class implements ConfigInterface
         $builder->useAutowiring(true);
         $builder->useAttributes(false);
         $builder->addDefinitions([
-            RouterContainer::class => $this->router,
-            Environment::class => fn (TwigFactory $factory) => $factory->create(),
+            Environment::class => $this->twig,
             AssetMapperInterface::class => fn (AssetMapperFactory $factory) => $factory->create(__DIR__ . '/dist_assets/manifest.json'),
         ]);
         return $builder->build();
@@ -57,7 +58,7 @@ return new class implements ConfigInterface
     public function extensions(): iterable
     {
         return [
-            new RouterStasisExtension($this->router),
+            new StasisTwigExtension($this->twig),
         ];
     }
 };

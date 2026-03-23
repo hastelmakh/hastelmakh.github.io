@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace App\Core;
 
-use App\Core\AssetMapper\AssetMapperTwigExtension;
 use App\Core\ModuleProvider\Module;
 use App\Core\ModuleProvider\ModuleProvider;
-use App\Core\Router\RouterTwigExtension;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -15,8 +13,6 @@ class TwigFactory
 {
     public function __construct(
         private ModuleProvider $moduleProvider,
-        private AssetMapperTwigExtension $assetMapperExtension,
-        private RouterTwigExtension $routerExtension,
     ) {}
 
     public function create(): Environment
@@ -29,9 +25,6 @@ class TwigFactory
             'strict_variables' => true,
             'autoescape' => 'html',
         ]);
-
-        $twig->addExtension($this->assetMapperExtension);
-        $twig->addExtension($this->routerExtension);
 
         return $twig;
     }
