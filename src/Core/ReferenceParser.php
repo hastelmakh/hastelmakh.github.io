@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\AssetMapper\Mapper;
+namespace App\Core;
 
 use App\Core\ModuleProvider\ModuleProvider;
 use Stasis\Extension\Vite\Reference\ReferenceParserInterface;

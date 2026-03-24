@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use App\Core\AssetMapper\Mapper\ReferenceParser;
 use App\Core\ModuleProvider\ModuleProvider;
-use App\Credits\CreditsController;
-use App\Projects\ProjectsRouteProvider;
+use App\Core\ReferenceParser;
 use App\Core\TwigFactory;
+use App\Credits\CreditsController;
 use App\Home\HomeController;
+use App\Projects\ProjectsRouteProvider;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Stasis\Config\ConfigInterface;
