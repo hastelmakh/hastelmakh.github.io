@@ -20,6 +20,7 @@ use Twig\Environment;
 
 return new class implements ConfigInterface
 {
+    #[\Override]
     public function routes(): iterable
     {
         return [
@@ -29,6 +30,7 @@ return new class implements ConfigInterface
         ];
     }
 
+    #[\Override]
     public function container(): ContainerInterface
     {
         $builder = new ContainerBuilder();
@@ -49,11 +51,13 @@ return new class implements ConfigInterface
         return $builder->build();
     }
 
+    #[\Override]
     public function distribution(): DistributionInterface
     {
         return new FilesystemDistribution(__DIR__ . '/dist');
     }
 
+    #[\Override]
     public function extensions(): iterable
     {
         return [
