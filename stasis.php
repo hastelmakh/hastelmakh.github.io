@@ -2,62 +2,67 @@
 
 declare(strict_types=1);
 
-use App\Credits\CreditsController;
-use App\Projects\ProjectsRouteProvider;
-use App\Core\AssetMapper\AssetMapperFactory;
-use App\Core\AssetMapper\AssetMapperInterface;
-use App\Core\Router\RouterContainer;
-use App\Core\Router\RouterStasisExtension;
+use App\Core\ReferenceParser;
 use App\Core\TwigFactory;
+use App\Credits\CreditsController;
 use App\Home\HomeController;
+use App\Projects\ProjectsRouteProvider;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Stasis\Config\ConfigInterface;
+use Stasis\Extension\Twig\StasisTwigExtension;
+use Stasis\Extension\Vite\StasisViteExtension;
 use Stasis\Generator\Distribution\DistributionInterface;
 use Stasis\Generator\Distribution\FilesystemDistribution;
-use Stasis\Router\Route\Asset;
 use Stasis\Router\Route\Group;
 use Stasis\Router\Route\Route;
 use Twig\Environment;
 
 return new class implements ConfigInterface
 {
-    public function __construct(
-        private RouterContainer $router = new RouterContainer(),
-    ) {}
-
+    #[\Override]
     public function routes(): iterable
     {
         return [
-            new Asset('/assets', __DIR__ . '/dist_assets/assets'),
             new Route('/', HomeController::class, 'home'),
             new Route('/credits', CreditsController::class, 'credits'),
             new Group('/projects', ProjectsRouteProvider::class)
         ];
     }
 
+    #[\Override]
     public function container(): ContainerInterface
     {
         $builder = new ContainerBuilder();
         $builder->useAutowiring(true);
         $builder->useAttributes(false);
         $builder->addDefinitions([
-            RouterContainer::class => $this->router,
             Environment::class => fn (TwigFactory $factory) => $factory->create(),
-            AssetMapperInterface::class => fn (AssetMapperFactory $factory) => $factory->create(__DIR__ . '/dist_assets/manifest.json'),
+            StasisTwigExtension::class => fn (Environment $twig) => new StasisTwigExtension($twig),
+            StasisViteExtension::class => function (Environment $twig, ReferenceParser $referenceParser) {
+                return StasisViteExtension::createWithReferenceParser(
+                    assetsSourcePath: __DIR__ . '/dist_assets/assets',
+                    manifestPath: __DIR__ . '/dist_assets/manifest.json',
+                    referenceParser: $referenceParser,
+                    assetsRoutePath: '/assets',
+                )->withTwig($twig);
+            }
         ]);
         return $builder->build();
     }
 
+    #[\Override]
     public function distribution(): DistributionInterface
     {
         return new FilesystemDistribution(__DIR__ . '/dist');
     }
 
+    #[\Override]
     public function extensions(): iterable
     {
         return [
-            new RouterStasisExtension($this->router),
+            StasisTwigExtension::class,
+            StasisViteExtension::class,
         ];
     }
 };
