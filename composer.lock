@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1911951a6f67db415198f0931528598e",
+    "content-hash": "db01985a21dcccf1ff40dd595cadcd22",
     "packages": [
         {
             "name": "laravel/serializable-closure",
@@ -300,21 +300,21 @@
         },
         {
             "name": "stasis/ext-vite",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stasis-php/ext-vite.git",
-                "reference": "ff0266b2e426427a8c40d825a5ad9094c4ff8d04"
+                "reference": "b143285f1f4ab16a20be19c6832aac9ee4cb8a0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stasis-php/ext-vite/zipball/ff0266b2e426427a8c40d825a5ad9094c4ff8d04",
-                "reference": "ff0266b2e426427a8c40d825a5ad9094c4ff8d04",
+                "url": "https://api.github.com/repos/stasis-php/ext-vite/zipball/b143285f1f4ab16a20be19c6832aac9ee4cb8a0e",
+                "reference": "b143285f1f4ab16a20be19c6832aac9ee4cb8a0e",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.4",
-                "stasis/stasis": "0.2.0"
+                "stasis/stasis": "^0.2.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^v3.93",
@@ -343,22 +343,22 @@
             "homepage": "https://github.com/stasis-php/ext-vite",
             "support": {
                 "issues": "https://github.com/stasis-php/ext-vite/issues",
-                "source": "https://github.com/stasis-php/ext-vite/tree/0.1.0"
+                "source": "https://github.com/stasis-php/ext-vite/tree/0.1.1"
             },
-            "time": "2026-03-23T22:26:27+00:00"
+            "time": "2026-03-30T21:31:57+00:00"
         },
         {
             "name": "stasis/stasis",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stasis-php/stasis.git",
-                "reference": "dbe343c8dcc7a6d81630e9be127b58991eb69a9e"
+                "reference": "d74a4c4b2e6cb00dc66c2f61ed75c6f4550cc45f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stasis-php/stasis/zipball/dbe343c8dcc7a6d81630e9be127b58991eb69a9e",
-                "reference": "dbe343c8dcc7a6d81630e9be127b58991eb69a9e",
+                "url": "https://api.github.com/repos/stasis-php/stasis/zipball/d74a4c4b2e6cb00dc66c2f61ed75c6f4550cc45f",
+                "reference": "d74a4c4b2e6cb00dc66c2f61ed75c6f4550cc45f",
                 "shasum": ""
             },
             "require": {
@@ -397,9 +397,9 @@
             "homepage": "https://github.com/stasis-php/stasis",
             "support": {
                 "issues": "https://github.com/stasis-php/stasis/issues",
-                "source": "https://github.com/stasis-php/stasis/tree/0.2.0"
+                "source": "https://github.com/stasis-php/stasis/tree/0.2.1"
             },
-            "time": "2026-03-22T22:03:22+00:00"
+            "time": "2026-03-30T21:11:38+00:00"
         },
         {
             "name": "symfony/console",
