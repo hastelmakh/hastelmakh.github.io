@@ -1,7 +1,7 @@
 .SILENT:
 .PHONY: $(MAKECMDGOALS)
 
-PROJECT_DIR:=$(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+PROJECT_DIR:=$(CURDIR)
 DOCKER_RUN:=docker run --rm -it -v "$(PROJECT_DIR):/app" -w "/app"
 IMAGE_NODE:=node:25-alpine
 IMAGE_PHP:=hastelmakh_php
@@ -19,6 +19,7 @@ setup:
 	echo ""
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Yarn$(T_RESET)"
 	$(DOCKER_RUN) $(IMAGE_NODE) yarn install
+	mkdir -p "$(PROJECT_DIR)/dist_assets/assets"
 
 generate:
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Vite$(T_RESET)"
