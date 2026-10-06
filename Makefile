@@ -1,7 +1,7 @@
 .SILENT:
 .PHONY: $(MAKECMDGOALS)
 
-PROJECT_DIR:=$(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+PROJECT_DIR:=$(CURDIR)
 DOCKER_RUN:=docker run --rm -it -v "$(PROJECT_DIR):/app" -w "/app"
 IMAGE_NODE:=node:25-alpine
 IMAGE_PHP:=hastelmakh_php
