@@ -19,6 +19,7 @@ setup:
 	echo ""
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Yarn$(T_RESET)"
 	$(DOCKER_RUN) $(IMAGE_NODE) yarn install
+	mkdir -p "$(PROJECT_DIR)/dist_assets/assets"
 
 generate:
 	echo "$(T_BG_INVERT) # $(T_RESET) $(T_FG_BOLD)Vite$(T_RESET)"
